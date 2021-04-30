@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Registrazione utente</title>
+        <link rel="stylesheet" type="text/css" href="Style_Login.css">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    </head>
+
+    <body class="corpo"  background="image.jpg" >
+        <div class="container">
+            <div class="login-box">
+                <div class="row">
+                    <div class="col-md-6 login-right">
+                        <h2> Registrazione: </h2>
+                        <form action="registrazione.php" method="POST">
+
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="user" name="user" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"> E-mail </label>
+                                <input type="email" id="email" name="email" pattern=".+@globex.com"  class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"> Password (almeno 6 caratteri) </label>
+                                <input type="password" id="passsword" name="password" minlength="8" required class="form-control" required>    
+                            </div>
+                            <!-- da implementare conferma password? -->
+                            <div class="form-group">
+                                <label for="pass"> Verifica password </label>
+                                <input type="password" id="passsword" name="password" minlength="8" required class="form-control" required>    
+                            </div>
+                            <div class="d-flex justify-content-center mt-3 login_container">
+                                <button type="submit" class="btn btn-reg">Registrati</button>
+                            </div>
+
+                        </form>
+                        <div class="mt-4">
+                            <!-- da rivedere sintassi --> 
+                            <div class="d-flex justify-content-center links">
+                                Hai già un account? <a href="login.html" class="ml-2">Accedi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+</html>

@@ -44,6 +44,11 @@
     
 }
 
+.login-box {
+    text-align: center;
+
+}
+
 /* Reset  */
 *{
     padding:0;

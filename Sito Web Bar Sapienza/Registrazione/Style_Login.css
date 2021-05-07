@@ -1,5 +1,5 @@
 .corpo{
-    
+
     background: linear-gradient(rgba(0,0,50,0.5), rgba(0,0,50,0.5), url("Registrazione/image.jpg"));
     background-size: cover;
     background-position:center;
@@ -7,25 +7,36 @@
 }
 
 .login-box{
+
     max-width: 700px;
     float: none;
     margin: 150px auto;
+    position: relative;
+    left: 20%;
 
 }
 
+.titolo{
+
+    text-align: center;
+}
+
 .login-left{
+
     background: rgba(211,211,211, 0.5);
     padding: 50px;
 
 }
 
 .login-right{
+
     background: rgba(211,211,211, 0.5);
     padding: 50px;
     
 }
 
 .row{
+
     background: rgb(0, 0, 0);
     background-color:transparent;
 }

@@ -1,0 +1,42 @@
+.boxContainer{ /*autoesplicativo*/
+    margin:auto;
+    margin-top:20%;
+    position:10px;
+    width: 300px; 
+    height: 42px;
+    border: 4px solid #530000;
+    padding: 0px 10px;
+    border-radius: 50px;
+
+}
+
+
+.elementsContainer{ /* centra il testo e il btn ricerca*/
+    width:100%;
+    height: 100%;
+    vertical-align:middle;
+
+}
+
+.search{
+
+    border:none;
+    height:100%;
+    width:100%;
+    padding:0 px 5px;
+    border-radius: 50px;
+    font-size:18px;
+    font-family: "Nunito";
+    color:#424242;
+    font-weight: 500;
+    }
+
+.material-icons{ /*colora il btn lente d'ingrandimento*/
+        font-size:25;
+        color:#700000;
+    }
+
+.search:focus{
+        outline:none;
+    
+}

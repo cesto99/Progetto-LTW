@@ -10,26 +10,7 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="./Css_form.css">
         <link rel="stylesheet" href="./css/Css Menù a tendina.css">
-        <script>
-            /*CONTENUTO JAVASCRIPT*/
-            function mostra_tendina() {
-                document.getElementById("myDropdown").classList.toggle("show");
-            }
-            window.onclick = function(event) {
-              if (!event.target.matches('.dropbtn')) {
-            
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                  var openDropdown = dropdowns[i];
-                  if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                  }
-                }
-              }
-            }
-            </script>
-        
+                
     </head>
     
     <body onload="caricaPagine()">
@@ -39,7 +20,29 @@
             <div class="site-content-wrapper">
                
                 <div class="site-content">
-                    <header class="topbar" id="inf"></header>
+                    <header class="topbar">
+                        <div class="container flex justify-between items-center">
+                            <div class="icons">
+                                <a href="#"><img src="./icons/facebook.svg" alt=""></a>
+                                <a href="https://www.instagram.com/sapienzaroma/?hl=it"><img src="./icons/instagram.svg" alt=""></a>
+                                
+                            </div>
+                            <div class="auth flex items-center">
+                                <h5> Ciao UTENTE! </h5>
+                                
+                                <div class="dropdown">
+                                    <button onclick="mostra_tendina()" class="dropbtn"> ▼ </button>
+                                      <div id="myDropdown" class="dropdown-content">
+                                        <a href="I_miei_dati.html"> I miei dati </a>
+                                        <a href="Metodo_di_pagamento.html"> Metodo di pagamento </a>
+                                        <a href="./Gioco/Gioca.html"> Gioca </a>
+                                        <a href="./Registrazione/Logout.php"> Logout</a>
+                                      </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </header>
     
                     <nav id="menu"></nav>
                     <!-- Aggiungere nome utente-->
@@ -107,8 +110,7 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        <script src="js/app.js"></script>
-        <script  src="js/Metodo_di_pagamento.js"></script>
+        <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="intestazione.js"></script>
     </body>
 

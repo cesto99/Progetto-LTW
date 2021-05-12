@@ -1,5 +1,5 @@
 <html>
-    <head></head>
+    <head><script type=text/javascript src="../gestione.js"></script></head>
     <body>
         <?php
             $dbconn = pg_connect("host=drinkparty.cpbsxsr2pb7t.us-east-1.rds.amazonaws.com port=5432 dbname=barsapienza
@@ -26,8 +26,8 @@
                         echo "<h1> La password è errata </h1>";    
                     }
                     else {
-                        echo "<h1>Accesso eseguito con successo</h1>"; //Non si vede questo messaggio
-                        header("Location: ../Utente_Loggato.html");
+                        echo "<script>caricaUtente('$username')</script>"; //Non si vede questo messaggio
+                        #header("Location: ../Utente_Loggato.html");
                     }
                 }
             }

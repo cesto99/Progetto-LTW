@@ -12,48 +12,9 @@
         <link rel="stylesheet" href="./css/Css Menù a tendina.css">
     </head>
     
-    <body>
+    <body onload="caricaPagine()">
         <div class="main-wrapper">
-            <div class="nav-background">
-                
-                <div >
-                    <img src="./icons/Uniroma1.svg.png" alt="">
-                </div>
-                <div class="mobile-nav">
-                    
-                    <div class="nav-top">
-                        <ul>
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                                <a  href="Info.html">Info</a>
-                            </li>
-                            
-                            <li>
-                                <a href="#">Negozio</a>
-                            </li>
-                            
-                                <a href="./Login.html">Registrati | Accedi </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="contact flex items-center">
-                        <img src="./icons/phone.svg" alt="">
-                        <div>
-                            <h5>SOS - 800 81 11 92</h5>
-                            <h6>E-mail : helpdesk@studenti.uniroma1.it</h6>
-                        </div>
-                    </div>
-                    <div class="time flex items-center">
-                        <img src="./icons/clock.svg" alt="">
-                        <div>
-                            <h5>Orario </h5>
-                            <h6>Lun - Sat 8.00 - 12.00</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="nav-background" id="intest"></div>
             <div class="site-content-wrapper">
                
                 <div class="site-content">
@@ -75,65 +36,12 @@
                                         <a href="./Registrazione/Logout.php">Logout</a>
                                       </div>
                                 </div>
-                                <script>
-                                    /*CONTENUTO JAVASCRIPT*/
-                                    function mostra_tendina() {
-                                        document.getElementById("myDropdown").classList.toggle("show");
-                                    }
-                                    window.onclick = function(event) {
-                                      if (!event.target.matches('.dropbtn')) {
-                                    
-                                        var dropdowns = document.getElementsByClassName("dropdown-content");
-                                        var i;
-                                        for (i = 0; i < dropdowns.length; i++) {
-                                          var openDropdown = dropdowns[i];
-                                          if (openDropdown.classList.contains('show')) {
-                                            openDropdown.classList.remove('show');
-                                          }
-                                        }
-                                      }
-                                    }
-                                    </script>
                                 
                             </div>
                         </div>
                     </header>
     
-                    <nav>
-                        <div class="top">
-                            <div class="container flex justify-between">
-                                <div class="contact flex items-center">
-                                    <img src="./icons/phone.svg" alt="">
-                                    <div>
-                                        <h5>Chiamaci</h5>
-                                        <h6>331 7479246</h6>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div>
-                                    
-                                    <img  class="grandezza_logo" src="./icons/Uniroma1.svg.png" alt="">
-                                </div>
-                                <div class="time flex items-center">
-                                    <img src="./icons/clock.svg" alt="">
-                                    <div>
-                                        <h5>Orari:</h5>
-                                        <h6>Lun - Sat 8.00 - 12.00</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="navbar magic-shadow">
-                            <div class="container flex justify-center">
-                                <a href="index.html" >Home</a>
-                                <a href="Info.html">Info</a>
-                                <a  href="Metodo_di_pagamento.html">Metodo di pagamento</a>
-                                <a href="#">Negozio</a>
-                                <a href="#">Contatti</a>
-                            </div>
-                        </div>
-                    </nav>
+                    <nav id="menu"></nav>
                     <!-- Aggiungere nome utente-->
                     
                     <div class="container ">
@@ -174,74 +82,10 @@
                         </div>
                     </div>
                     <br>
-                    <section class="our-services">
-                        <div class="container">
-                            <h1 class="section-heading">I nostri Servizi</h1>
-                            <div class="card-wrapper flex">
-                                <div class="service-card magic-shadow-sm">
-                                    <img class="icon" src="./icons/transport.svg" alt="">
-                                    <h2>Ritiro presso il negozio</h2>
-                                    <p>Vieni a ritirarlo nel punto del bar situato nella città universitaria</p>
-                                    
-                                </div>
-                                
-                                <div class="service-card magic-shadow-sm">
-                                    <img class="icon" src="./icons/usd.svg" alt="">
-                                    <h2>Te lo consegnamo noi!</h2>
-                                    <p>Con un tempo di attesa stabilito te lo consegnamo noi a seconda dell'edificio in cui ti trovi</p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <footer>
-                        <div class="container">
-                            <div class="box">
-                                <h3>Info</h3>
-                                <p>Un nuovo servizio per praticità e affidabilità all'interno della Città Universitaria </p>
-                                
-                            </div>
-                            <div class="box">
-                                <h3>Quik Links</h3>
-                                <ul>
-                                    <li>
-                                        <a href="index.html">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="Info.html">Info</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Negozio</a>
-                                    </li>
-                                   
-                                    <li>
-                                        <a href="Registrazione/Login.html">Registrati o Accedi</a>
-                                    </li>
-    
-                                </ul>
-                            </div>
-                            <div class="box">
-                                <h3>Seguici</h3>
-                                <div>
-                                    <ul>
-                                        <li>
-                                            <a href="HH">
-                                                <img src="./icons/facebook.svg" alt="">
-                                                <span>Facebook</span>
-                                            </a>
-                                        </li>
-                                    
-                                        <li>
-                                            <a href="https://www.instagram.com/sapienzaroma/?hl=it">
-                                                <img src="./icons/instagram.svg" alt="">
-                                                <span>Instagram</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
+                    <section class="our-services" id="serv"></section>
+
+                    <footer id="foot"></footer>
+
                     <footer class="copyright">
                         <div>
                             Copyright © 2020 .All rights reserved by Marco Paglialunga</a>.
@@ -250,7 +94,11 @@
                 </div>
             </div>
         </div>
-    
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script type="text/javascript" src="intestazione.js"></script>
+        <script type="text/javascript" src="app.js"></script>
     </body>
 
 

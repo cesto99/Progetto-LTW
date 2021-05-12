@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="./css/Css Menù a tendina.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="./Negozio.css">
     </head>
     
     <body onload="caricaPagine()">
@@ -31,12 +33,12 @@
                                 <div class="dropdown">
                                     <button onclick="mostra_tendina()" class="dropbtn"> ▼ </button>
                                       <div id="myDropdown" class="dropdown-content">
-                                        <a href="I_miei_dati.html"> I miei dati </a>
-                                        <a href="Metodo_di_pagamento.html"> Metodo di pagamento </a>
-                                        <a href="./Gioco/Gioca.html"> Gioca </a>
-                                        <a href="./Registrazione/Logout.php"> Logout</a>
+                                        <a href="I_miei_dati.html">I miei dati </a>
+                                        <a href="Metodo_di_pagamento.html">Metodo di pagamento </a>
+                                        <a href="./Registrazione/Logout.php">Logout</a>
                                       </div>
                                 </div>
+                                
                                 
                             </div>
                         </div>
@@ -44,6 +46,22 @@
     
                     <nav id="menu"></nav>
 
+                    <!-- Scrivi da qui-->
+                    <div class="boxContainer posizione">
+                        <table class="elementsContainer">
+                            <tr>
+                                <td>
+                                    <input type="text" placeholder="Ricerca" class="search">
+                                </td>
+                                <td>   
+                                    
+                                    <a href="#"> <i onclick="cerca()" class="material-icons"> search </i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
                     <section class="our-services" id="serv"></section>
 
                     <footer id="foot"></footer>
@@ -63,5 +81,8 @@
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="intestazione.js"></script>
     </body>
-    
+
+
+
+
 </html>

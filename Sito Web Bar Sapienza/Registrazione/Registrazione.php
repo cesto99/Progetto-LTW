@@ -17,7 +17,7 @@
                 $q1= "select * from utenti where username = $1";
                 $result = pg_query_params($dbconn, $q1, array($username));
                 if ($line=pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                    echo "<script> verifica_utente(); </script>";
+                    echo "<script> verifica_utente1(); </script>";
                 }
                 else {
                     $username = $_POST ['user'];

@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="./css/Css Menù a tendina.css">
     </head>
     
-    <body onload="caricaPagine()">
+    <body onload="caricaPagine(); scriviNome()">
         <div class="main-wrapper">
             <div class="nav-background" id="intest"></div>
 
@@ -26,7 +26,7 @@
                                 
                             </div>
                             <div class="auth flex items-center">
-                                <h5> Ciao UTENTE! </h5>
+                                <h5 id="ut"></h5>
                                 
                                 <div class="dropdown">
                                     <button onclick="mostra_tendina()" class="dropbtn"> ▼ </button>
@@ -62,6 +62,7 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="intestazione.js"></script>
+        <script type="text/javascript" src="gestione.js"></script>
     </body>
     
 </html>

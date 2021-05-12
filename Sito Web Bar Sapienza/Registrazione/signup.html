@@ -5,10 +5,14 @@
         <title>Registrazione utente</title>
         <link rel="stylesheet" type="text/css" href="Style_Login.css">
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="verifica.js"></script>
     </head>
 
-    <body class="corpo">
+    <body class="corpo" onload="modifica()">
         <a href="../index.html"> <button class="btn btn-secondary">HOME</button></a>
+        <div id="errore">
+            <h3></h3>
+        </div>
         <div class="container">
             <div class="login-box">
                 <div class="row">
@@ -16,7 +20,7 @@
                         <h2 class="titolo">Registrati</h2>
                         <form action="registrazione.php" method="POST">
 
-                            <div class="form-group">
+                            <div id="userlab" class="form-group" >
                                 <label for="username">Username</label>
                                 <input type="text" id="user" name="user" class="form-control" required>
                             </div>
@@ -26,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="pass">Password</label>
-                                <input type="password" placeholder="Almeno 6 caratteri" id="passsword" name="password" minlength="8" required class="form-control" required>    
+                                <input type="password" placeholder="Almeno 8 caratteri" id="passsword" name="password" minlength="8" required class="form-control" required>    
                             </div>
                             <!-- da implementare conferma password? -->
                             <div class="form-group">
@@ -48,6 +52,9 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     </body>
     
 </html>

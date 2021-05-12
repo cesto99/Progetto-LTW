@@ -18,7 +18,6 @@
                 $result = pg_query_params($dbconn, $q1, array($username));
                 if ($line=pg_fetch_array($result, null, PGSQL_ASSOC)) {
                     echo "<script> verifica_utente(); </script>";
-                    header("Location: signup.html");
                 }
                 else {
                     $username = $_POST ['user'];

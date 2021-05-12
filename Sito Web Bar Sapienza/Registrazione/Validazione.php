@@ -2,7 +2,7 @@
 <html>
     <head>
         <!-- includo il file JS in cui definisco le funzioni per i messaggi di errore -->
-        <script src="verifica.js"></script> 
+        <script type=text/javascript src="verifica.js"></script> 
     </head>
     <body>
         <?php

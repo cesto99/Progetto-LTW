@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <!-- includo il file JS in cui definisco le funzioni per i messaggi di errore -->
@@ -26,8 +27,8 @@
                         echo "<script> controlla_password(); </script>";    
                     }
                     else {
-                        echo "<h1>Accesso eseguito con successo</h1>"; //Non si vede questo messaggio
-                        header("Location: ../Utente_Loggato.html");
+                        echo "<script>caricaUtente('$username')</script>"; //Non si vede questo messaggio
+                        #header("Location: ../Utente_Loggato.html");
                     }
                 }
             }

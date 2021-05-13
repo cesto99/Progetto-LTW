@@ -1,5 +1,9 @@
+<!DOCTYPE html>
 <html>
-    <head><script type=text/javascript src="../gestione.js"></script></head>
+    <head>
+        <!-- includo il file JS in cui definisco le funzioni per i messaggi di errore -->
+        <script type=text/javascript src="verifica.js"></script> 
+    </head>
     <body>
         <?php
             $dbconn = pg_connect("host=drinkparty.cpbsxsr2pb7t.us-east-1.rds.amazonaws.com port=5432 dbname=barsapienza
@@ -13,17 +17,14 @@
                 $q1="select * from utenti where username = $1";
                 $result=pg_query_params($dbconn, $q1, array($username));
                 if (!($line=pg_fetch_array($result, null, PGSQL_ASSOC))){
-                    echo "<h1> Spiacente, non sei un utente registrato </h1>
-                    <a href=signup.html>
-                    Clicca qui per registrarti
-                    </a>";  
+                    echo "<script> verifica_utente2(); </script>";
                 }
                 else{
                     $password = $_POST['password']; // con md5 non funzionava
                     $q2 = "select * from utenti where username = $1 and pass = $2";
                     $result = pg_query_params($dbconn, $q2, array ($username, $password));
                     if (!($line = pg_fetch_array($result, null, PGSQL_ASSOC))){
-                        echo "<h1> La password è errata </h1>";    
+                        echo "<script> controlla_password(); </script>";    
                     }
                     else {
                         echo "<script>caricaUtente('$username')</script>"; //Non si vede questo messaggio

@@ -7,12 +7,14 @@
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <script src="verifica.js"></script>
     </head>
-
+    <!-- Chiama la funzione modifica che serve per variare il messaggio di errore -->
     <body class="corpo" onload="modifica()">
         <a href="../index.html"> <button class="btn btn-secondary">HOME</button></a>
-        <div id="errore">
-            <h3></h3>
+        
+        <div id="error-container">
+            <!-- Qui comparirá l'errore -->
         </div>
+
         <div class="container">
             <div class="login-box">
                 <div class="row">
@@ -30,13 +32,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="pass">Password</label>
-                                <input type="password" placeholder="Almeno 8 caratteri" id="passsword" name="password" minlength="8" required class="form-control" required>    
+                                <input type="password" placeholder="Almeno 8 caratteri" id="passsword1" name="password1" minlength="8" required class="form-control" required>    
                             </div>
-                            <!-- da implementare conferma password? -->
                             <div class="form-group">
                                 <label for="pass">Verifica password</label>
-                                <input type="password" id="passsword" name="password" minlength="8" required class="form-control" required>    
+                                <input type="password" id="passsword2" name="password2" minlength="8" required class="form-control" required>    
                             </div>
+
                             <div class="d-flex justify-content-center mt-3 login_container">
                                 <button type="submit" name="reg" class="btn btn-reg">Registrati</button>
                             </div>

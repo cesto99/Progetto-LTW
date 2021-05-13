@@ -17,17 +17,27 @@
                 $q1= "select * from utenti where username = $1";
                 $result = pg_query_params($dbconn, $q1, array($username));
                 if ($line=pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                    echo "<script> verifica_utente(); </script>";
+                    echo "<script> verifica_utente1(); </script>";
                 }
                 else {
                     $username = $_POST ['user'];
-                    $password = $_POST ['password'];
+                    $password1 = $_POST ['password1'];
+                    $password2 = $_POST ['password2'];
                     $email = $_POST ['email'];
-                    $q2 = "insert into utenti values($1, $2, $3)";
-                    $data = pg_query_params( $dbconn, $q2, array ($username, $password, $email));
-                    if ($data) {
-                       header("Location: ../Utente_Loggato.html");
+                    
+                    // Se le 2 password inserite sono uguali procedo con la query
+                    if ($password1 == $password2) {
+                        $q2 = "insert into utenti values($1, $2, $3)";
+                        $data = pg_query_params( $dbconn, $q2, array ($username, $password1, $email));
+                        if ($data) {
+                           header("Location: ../Utente_Loggato.html");
+                        }  
                     }
+                    // Altrimenti do il messaggio di errore
+                    else {
+                        echo "<script> confronta_password(); </script>";
+                    }
+
                 }  
             }
         ?>

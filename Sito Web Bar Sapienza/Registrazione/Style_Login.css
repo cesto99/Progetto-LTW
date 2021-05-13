@@ -1,4 +1,19 @@
-.corpo{
+.center {
+    width: 840px; /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    padding: 5px;
+    position: relative;
+}
+
+
+.error {
+
+    border: 1px solid rgb(153, 0, 0); 
+    
+}
+
+.corpo {
 
     background: linear-gradient(rgba(0,0,50,0.5), rgba(0,0,50,0.5), url("Registrazione/image.jpg"));
     background-size: cover;
@@ -6,7 +21,7 @@
     
 }
 
-.login-box{
+.login-box {
 
     max-width: 700px;
     float: none;
@@ -16,31 +31,30 @@
 
 }
 
-.titolo{
+.titolo {
 
     text-align: center;
 }
 
-.login-left{
+.login-left {
 
     background: rgba(211,211,211, 0.5);
     padding: 50px;
 
 }
 
-.login-right{
+.login-right {
 
     background: rgba(211,211,211, 0.5);
     padding: 50px;
     
 }
 
-.row{
+.row {
 
     background: rgb(0, 0, 0);
     background-color:transparent;
 }
-
 
 .btn-reg {
     

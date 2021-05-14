@@ -27,8 +27,8 @@ function caricaPagine(){
             '</div>'+
         '</div>'+
     '</div>');
-
-    $("#inf").append(''+
+if (localStorage.utente==undefined){
+    $("#inf").append('' +
     '<div class="container flex justify-between items-center">'+
         '<div class="icons">'+
             '<a href="#"><img src="./icons/facebook.svg" alt=""></a>'+
@@ -46,6 +46,30 @@ function caricaPagine(){
             '</div>'+
         '</div>'+
     '</div>');
+}
+else{
+    $("#inf").append('' +
+    '<div class="container flex justify-between items-center">'+
+        '<div class="icons">'+
+            '<a href="#"><img src="./icons/facebook.svg" alt=""></a>'+
+            '<a href="https://www.instagram.com/sapienzaroma/?hl=it"><img src="./icons/instagram.svg" alt=""></a>'+
+        '</div>'+
+        '<div class="auth flex items-center">'+
+            '<h5 id="ut"></h5>'+
+            '<div class="dropdown">'+
+                '<button onclick="mostra_tendina()" class="dropbtn"> ▼ </button>'+
+                '<div id="myDropdown" class="dropdown-content">'+
+                    '<a href="I_miei_dati.html"> I miei dati </a>'+
+                    '<a href="Metodo_di_pagamento.html"> Metodo di pagamento </a>'+
+                    '<a href="./Gioco/Gioca.html"> Gioca </a>'+
+                    '<a href="./Registrazione/Logout.php"> Logout</a>'+
+                '</div>'+
+            '</div>'+
+        '</div>'+
+    '</div>');
+
+    scriviNome();
+}
 
     $("#menu").append(''+
     '<div class="top">'+

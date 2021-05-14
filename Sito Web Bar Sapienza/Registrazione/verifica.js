@@ -24,16 +24,16 @@ function confronta_password() {
 
 
 // ------ Funzioni per mostrare nome utente ------ //
-function caricaUtente(username){
+function caricaUtente(user, matr, nom, cogn, nasc){
     localStorage.utente="";
-    var utente={nome: username};
+    var utente={username: user, matricola: matr, nome: nom, cognome:cogn, nascita:nasc};
     localStorage.utente=JSON.stringify(utente);
     location.href="../Utente_Loggato.html";
 }
 
 function stampaNome(){
     var u=JSON.parse(localStorage.utente);
-    return u.nome;
+    return u.username;
 }
 
 function scriviNome(){

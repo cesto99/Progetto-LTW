@@ -27,8 +27,8 @@
                         echo "<script> controlla_password(); </script>";    
                     }
                     else {
-                        echo "<script>caricaUtente('$username')</script>"; //Non si vede questo messaggio
-                        #header("Location: ../Utente_Loggato.html");
+                        $line=pg_fetch_array($result, 0, PGSQL_NUM);
+                        echo "<script>caricaUtente('$username','$line[3]','$line[4]', '$line[5]', '$line[6]')</script>";
                     }
                 }
             }

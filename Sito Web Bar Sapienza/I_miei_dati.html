@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="./css/Css Menù a tendina.css">
     </head>
     
-    <body onload="caricaPagine(); scriviNome()">
+    <body onload="caricaPagine(); scriviNome(); mettiUtente()">
         <div class="main-wrapper">
             <div class="nav-background" id="intest"></div>
             <div class="site-content-wrapper">
@@ -50,11 +50,11 @@
                             
                         </div>
                         <div class="card grigio container"> 
-                            <form method="post"> <!--Non so se si deve implementare un'action-->
-                                
+                            <form method="post" action="Aggiorna_I_miei_dati.php"> 
                                 <!--Deve essere ancora implementato il file Js che controlla i campi dei dati-->
                                 <br>
                                 <div class="container">
+                                    <input type="hidden" id="user" name="user">
                                     Nome: <br>
                                         <input type="text" name="nome" placeholder="Nome"><br>
                                     <br>
@@ -63,21 +63,21 @@
 
                                     <br>
                                     Data di nascita: <br>
-                                        <input type="date" id="nascita" name="nascita"> <br>
+                                        <input type="date" name="nascita" name="nascita"> <br>
                                     <br>
 
                                     Matricola: <br>
                                         <input type="text" name="matr" pattern="[0-9]*"  maxlength="10" placeholder="Matricola"><br>
 
                                     <br>
-                                    
+                                    <div class="visa container">
+                                        <button class="btn btn-secondary" type="submit" name="agg">Aggiorna dati</button> <!-- Da Implementare -->
+                                        <button class="btn btn-secondary" type="reset" >Cancella</button>  <br> <!-- Ricontrollare se va bene -->
+                                        <br>
+                                    </div>
                                 </div>
                             </form>
-                            <div class="visa container">
-                                <button class="btn btn-secondary">Aggiorna dati</button> <!-- Da Implementare -->
-                                <a href="I_miei_dati.html"> <button class="btn btn-secondary">Cancella</button> </a> <br> <!-- Ricontrollare se va bene -->
-                                <br>
-                            </div>
+                            
                         
                         </div>
                     </div>

@@ -45,6 +45,9 @@ function esci(){
     location.href="../index.html"
 }
 
+function mettiUtente(){
+  document.getElementById("user").value=stampaNome();
+}
 
 function modifica() {
 

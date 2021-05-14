@@ -1,6 +1,6 @@
 <html>
     <head>
-        <script src="verifica.js"></script> 
+        <script src="Registrazione/verifica.js"></script> 
     </head>
     <body>
         <?php
@@ -12,25 +12,19 @@
             }
             
             else {
-                $username = $_POST['user'];
-                $q1= "select * from utenti where username = $1";
-                $result = pg_query_params($dbconn, $q1, array($username));
-                if ($line=pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                        alert("c'è qualcosa che non và!");
-                }
-                else {
                     
+                    $username=$_POST['user'];
+                    $matricola = $_POST ['matr'];
                     $nome = $_POST ['nome'];
-                    $cognome = $_POST ['surname'];
-                    $nascita = $_POST ['birthday'];
-                    $matricola = $_POST ['matricola'];
+                    $cognome = $_POST ['cogn'];
+                    $nascita = $_POST ['nascita'];
+                    
 
-                    $q2 = "insert into utenti values($4, $5, $6, $7)";
-                    $data = pg_query_params( $dbconn, $q2, array ($nome, $cognome, $nascita, $matricola));
+                    $q2 = "update utenti set nome = $2, cognome = $3, matricola = $5, nascita = $4 where username = $1";
+                    $data = pg_query_params( $dbconn, $q2, array ($username, $nome, $cognome, $nascita, $matricola));
                     if ($data) {                           
-                        alert("Dati inseriti");
-                        header("Location: ../Utente_Loggato.html");
-                    }
+                        header("Location: Utente_Loggato.html");
+                    
                 }  
             }
         ?>

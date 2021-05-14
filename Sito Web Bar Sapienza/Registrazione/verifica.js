@@ -40,7 +40,10 @@ function scriviNome(){
     $("#ut").append('Ciao '+stampaNome()+'!');
 }
 
-
+function esci(){
+    localStorage.clear();
+    location.href="../index.html"
+}
 
 
 function modifica() {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="../gestione.js"></script> 
+        <script src="verifica.js"></script> 
     </head>
     <body>
         <?php

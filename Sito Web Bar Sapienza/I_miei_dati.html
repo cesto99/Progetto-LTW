@@ -10,26 +10,31 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="./Css_form.css">
         <link rel="stylesheet" href="./css/Css Menù a tendina.css">
+        <link rel="stylesheet" type="text/css" href="Registrazione/Style_Login.css">
     </head>
     
-    <body onload="caricaPagine(); mettiUtente()">
+    <body onload="caricaPagine(); mettiUtente(); msg(); ErrorMsg()">
         <div class="main-wrapper">
             <div class="nav-background" id="intest"></div>
             <div class="site-content-wrapper">
-               
+                
                 <div class="site-content">
                     <header class="topbar" id="inf"></header>
     
                     <nav id="menu"></nav>
                     <!-- Aggiungere nome utente-->
                     
-                    <div class="container ">
+                    <div id="message-container">
+                        <!-- Qui comparirá lil messaggio -->
+                    </div>
+                    
+                    <div class="container center">
                         <div class="welcome flex items-center">
                             <h1 class="titolo">I MIEI DATI</h1> <br>
                             
                         </div>
                         <div class="card grigio container"> 
-                            <form method="post" action="Aggiorna_I_miei_dati.php"> 
+                            <form method="post" name="aggiorna" action="Aggiorna_I_miei_dati.php"> 
                                 <!--Deve essere ancora implementato il file Js che controlla i campi dei dati-->
                                 <br>
                                 <div class="container">
@@ -50,7 +55,7 @@
 
                                     <br>
                                     <div class="visa container">
-                                        <button class="btn btn-secondary" type="submit" name="agg">Aggiorna dati</button> <!-- Da Implementare -->
+                                        <button class="btn btn-secondary" onsubmit="controllaInput()" type="submit" name="agg">Aggiorna dati</button> <!-- Da Implementare -->
                                         <button class="btn btn-secondary" type="reset" >Cancella</button>  <br> <!-- Ricontrollare se va bene -->
                                         <br>
                                     </div>

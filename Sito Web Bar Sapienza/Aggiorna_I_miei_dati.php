@@ -22,10 +22,11 @@
 
                     $q2 = "update utenti set nome = $2, cognome = $3, matricola = $5, nascita = $4 where username = $1";
                     $data = pg_query_params( $dbconn, $q2, array ($username, $nome, $cognome, $nascita, $matricola));
-                    if ($data) {                           
-                        header("Location: Utente_Loggato.html");
-                    
-                }  
+                    if ($data) {                       
+                        echo "<script> aggiorna_dati(); </script>";
+                        //header("Location: Utente_Loggato.html");
+                    }  
+                    echo "<script> aggiorna_dati(); </script>";
             }
         ?>
     </body>

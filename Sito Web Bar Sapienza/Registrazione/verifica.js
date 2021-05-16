@@ -23,6 +23,7 @@ function confronta_password() {
 }
 
 
+
 // ------ Funzioni per mostrare nome utente ------ //
 function caricaUtente(user, matr, nom, cogn, nasc){
     localStorage.utente="";
@@ -49,7 +50,7 @@ function mettiUtente(){
   document.getElementById("user").value=stampaNome();
 }
 
-function modifica() {
+function ErrorMsg() {
 
     switch(localStorage.verifica) {
         
@@ -80,12 +81,52 @@ function modifica() {
                                             <p>Errore!</p> <p>Le due password inserite devono essere uguali!</p>\
                                             </h3>\</div>");
             break;
-
+        
         default:
-            localStorage.verifica = "false";
+        localStorage.verifica = "false";
     
     }
     localStorage.clear();
 }
 
 
+
+// ------ Funzioni per messaggi generici su schermo ------ //
+function aggiorna_dati() {
+    localStorage.messaggio = "DatiAggiornati"; // la variabile messaggio serve per printare messaggi su schermo
+    location.href = "i_miei_dati.html";
+
+}
+
+// Devo usare un'altra funzione con una variabile local storage diversa
+// perche altrimenti altre funzioni pulirebbero "verifica" anche quando non devono
+// quindi introduco la variabile lS "messaggio".
+function msg() {
+
+    switch(localStorage.messaggio) {
+        case "DatiAggiornati":
+            $("#message-container").append("<div class=\"titolo msg center\">\
+                                            <h3 style=\"color:rgb(0, 153, 0)\">\
+                                            <p>I dati sono stati aggiornati correttamente!</p>\
+                                            </h3>\</div>");
+            break;
+    }
+    localStorage.messaggio = "";
+}
+
+
+
+
+function controllaInput(nome, cogn, data, matr) {
+    nome = document.aggiorna.nome.value
+    cogn = document.aggiorna.cogn.value
+    matr = document.aggiorna.matr.value
+
+    if (length(matr) > 7) {
+        localStorage.verifica = "PasswordDiversa";
+
+    }
+
+
+
+}

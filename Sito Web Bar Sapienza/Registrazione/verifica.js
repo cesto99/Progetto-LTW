@@ -116,17 +116,11 @@ function msg() {
 
 
 
-
-function controllaInput(nome, cogn, data, matr) {
-    nome = document.aggiorna.nome.value
-    cogn = document.aggiorna.cogn.value
-    matr = document.aggiorna.matr.value
-
-    if (length(matr) > 7) {
-        localStorage.verifica = "PasswordDiversa";
-
-    }
-
-
-
+function caricaDati() {
+    var u = JSON.parse(localStorage.utente)
+    document.getElementById("user").value = u.username;
+    document.getElementsByName("nome")[0].value = u.nome;
+    document.getElementsByName("cogn")[0].value = u.cognome;
+    document.getElementsByName("nascita")[0].value = u.nascita;
+    document.getElementsByName("matr")[0].value = u.matricola;
 }

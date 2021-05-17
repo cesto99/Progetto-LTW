@@ -23,13 +23,15 @@
                     <header class="topbar" id="inf"></header>
     
                     <nav id="menu"></nav>
-                    <!-- Aggiungere nome utente-->
-                    /*Implementare il verifica*/
+                   
+                    
                     <div class="container ">
                         <div class="welcome flex items-center">
-                            <h1>Aggiungi metodo di pagamento</h1> <br>
-                            
+                            <h1>Modifica i dati di una carta </h1> <br>
+                            <br> 
                         </div>
+                        
+                        <h5>Inserisci i nuovi dati di una carta che vuoi modificare, specificando il numero</h5>
                         <div class="card grigio container"> 
                             <form method="post" action="AggiungiCarta.php"> <!--Non so se si deve implementare un'action-->
                                 <br>
@@ -37,20 +39,14 @@
                                     <input type="hidden" id="user" name="user">
 
                                     <input type="hidden" id="mese" name="user">
-                                    Metodo di pagamento: <br>
-                                    <select name="Tipologia di Carta prepagata"> 
-                                        <option value="00" selected onclick="Verifica(00)"> MasterCard</option>
-                                        <option value="01" selected onclick="Verifica(01)"> Visa </option>
-                                        
-                                        
-                                    </select> <br>
-                                    Titolare della carta: <br>
-                                        <input type="text" name="titolare" placeholder="Nome e cognome"><br>
-                                    <br>
-                                    Numero Carta: <br>
+                                    Numero Carta da modificare: <br>
                                         <input type="text" name="numero" pattern="[0-9]*" inputmode="numeric" maxlength="19" placeholder="ad es. 1234 5678 9012 3456"><br> 
 
                                     <br>
+                                    Titolare della carta: <br>
+                                        <input type="text" name="titolare" placeholder="Nome e cognome"><br>
+                                    <br>
+                                    
                                     Data di scadenza: <br>
                                         <input type="month" id="scadenza"  name="scadenza" pattern="[0-9]*" > <br>
                                     <br>
@@ -61,7 +57,7 @@
                                     
                                 </div>
                                 <div class="visa container">
-                                    <button class="btn btn-secondary" type="submit" name="agg2">Aggiungi</button> 
+                                    <button class="btn btn-secondary" type="submit" name="Mod">Aggiorna carta</button> 
                                     <button class="btn btn-secondary" type="reset" >Cancella</button>
                                     <br>
                                 </div>

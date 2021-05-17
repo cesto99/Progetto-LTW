@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="Registrazione/Style_Login.css">
     </head>
     
-    <body onload="caricaPagine(); mettiUtente(); msg(); ErrorMsg()">
+    <body onload="caricaPagine(); mettiUtente(); msg(); ErrorMsg(); caricaDati()">
         <div class="main-wrapper">
             <div class="nav-background" id="intest"></div>
             <div class="site-content-wrapper">
@@ -40,10 +40,10 @@
                                 <div class="container">
                                     <input type="hidden" id="user" name="user">
                                     Nome: <br>
-                                        <input type="text" name="nome" placeholder="Nome"><br>
+                                        <input type="text" name="nome" pattern="([a-zA-Z]+[ ]{0,1}[a-zA-Z]+)+" placeholder="Nome"><br>
                                     <br>
                                     Cognome: <br>
-                                        <input type="text" name="cogn"  placeholder="Cognome"><br> 
+                                        <input type="text" name="cogn" pattern="([a-zA-Z]+[ ]{0,1}[a-zA-Z]+)+"  placeholder="Cognome"><br> 
 
                                     <br>
                                     Data di nascita: <br>
@@ -51,11 +51,10 @@
                                     <br>
 
                                     Matricola: <br>
-                                        <input type="text" name="matr" pattern="[0-9]*"  maxlength="10" placeholder="Matricola"><br>
-
+                                        <input type="text" name="matr" pattern="[0-9]*"  maxlength="7" placeholder="Matricola"><br>
                                     <br>
                                     <div class="visa container">
-                                        <button class="btn btn-secondary" onsubmit="controllaInput()" type="submit" name="agg">Aggiorna dati</button> <!-- Da Implementare -->
+                                        <button class="btn btn-secondary" type="submit" name="agg">Aggiorna dati</button> <!-- Da Implementare -->
                                         <button class="btn btn-secondary" type="reset" >Cancella</button>  <br> <!-- Ricontrollare se va bene -->
                                         <br>
                                     </div>
@@ -85,8 +84,4 @@
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="Registrazione/verifica.js"></script>
     </body>
-
-
-
-
 </html>

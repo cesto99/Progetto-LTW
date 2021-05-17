@@ -13,7 +13,7 @@
                 
     </head>
     
-    <body onload="caricaPagine(); mettiUtente(); mettiMeseeAnno()">
+    <body onload="caricaPagine(); mettiUtente()">
         <div class="main-wrapper">
             <div class="nav-background" id="intest"></div>
 
@@ -22,52 +22,29 @@
                 <div class="site-content">
                     <header class="topbar" id="inf"></header>
     
-                    <nav id="menu"></nav>
-                    <!-- Aggiungere nome utente-->
-                    /*Implementare il verifica*/
-                    <div class="container ">
+                    <div class="container">
                         <div class="welcome flex items-center">
-                            <h1>Aggiungi metodo di pagamento</h1> <br>
+                            <h1>Elimina Carta</h1> <br>
                             
                         </div>
                         <div class="card grigio container"> 
-                            <form method="post" action="AggiungiCarta.php"> <!--Non so se si deve implementare un'action-->
+                            <form method="post" action="EliminaCarta.php"> <!--Non so se si deve implementare un'action-->
                                 <br>
                                 <div class="visa container">
-                                    <input type="hidden" id="user" name="user">
-
-                                    <input type="hidden" id="mese" name="user">
-                                    Metodo di pagamento: <br>
-                                    <select name="Tipologia di Carta prepagata"> 
-                                        <option value="00" selected onclick="Verifica(00)"> MasterCard</option>
-                                        <option value="01" selected onclick="Verifica(01)"> Visa </option>
-                                        
-                                        
-                                    </select> <br>
-                                    Titolare della carta: <br>
-                                        <input type="text" name="titolare" placeholder="Nome e cognome"><br>
-                                    <br>
-                                    Numero Carta: <br>
+                                    <input type="hidden" id="user" name="user">                               
+                                    
+                                    Inserisci il numero della carta che vuoi eliminare: <br>
                                         <input type="text" name="numero" pattern="[0-9]*" inputmode="numeric" maxlength="19" placeholder="ad es. 1234 5678 9012 3456"><br> 
 
                                     <br>
-                                    Data di scadenza: <br>
-                                        <input type="month" id="scadenza"  name="scadenza" pattern="[0-9]*" > <br>
-                                    <br>
-                
-                                    Codice CVV <br>
-                                        <input type="text" name="CVV" pattern="[0-9]*" inputmode="numeric" maxlength="3" placeholder="ad es. 000"><br>
-                                    <br>
-                                    
-                                </div>
+
+                                </div>    
                                 <div class="visa container">
-                                    <button class="btn btn-secondary" type="submit" name="agg2">Aggiungi</button> 
+                                    <button class="btn btn-secondary" type="submit" name="ElCart">Elimina</button> 
                                     <button class="btn btn-secondary" type="reset" >Cancella</button>
                                     <br>
                                 </div>
                             </form>
-                            
-                        
                         </div>
                     </div>
                     <br>

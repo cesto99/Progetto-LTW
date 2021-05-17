@@ -29,7 +29,6 @@ function caricaUtente(user, matr, nom, cogn, nasc){
     localStorage.utente="";
     var utente={username: user, matricola: matr, nome: nom, cognome:cogn, nascita:nasc};
     localStorage.utente=JSON.stringify(utente);
-    location.href="../Utente_Loggato.html";
 }
 
 function stampaNome(){
@@ -86,7 +85,7 @@ function ErrorMsg() {
         localStorage.verifica = "false";
     
     }
-    localStorage.clear();
+    localStorage.verifica = ""
 }
 
 
@@ -116,17 +115,11 @@ function msg() {
 
 
 
-
-function controllaInput(nome, cogn, data, matr) {
-    nome = document.aggiorna.nome.value
-    cogn = document.aggiorna.cogn.value
-    matr = document.aggiorna.matr.value
-
-    if (length(matr) > 7) {
-        localStorage.verifica = "PasswordDiversa";
-
-    }
-
-
-
+function caricaDati() {
+    var u = JSON.parse(localStorage.utente)
+    document.getElementById("user").value = u.username;
+    document.getElementsByName("nome")[0].value = u.nome;
+    document.getElementsByName("cogn")[0].value = u.cognome;
+    document.getElementsByName("nascita")[0].value = u.nascita;
+    document.getElementsByName("matr")[0].value = u.matricola;
 }

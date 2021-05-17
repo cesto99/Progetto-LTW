@@ -28,7 +28,7 @@
                     }
                     else {
                         $line=pg_fetch_array($result, 0, PGSQL_NUM);
-                        echo "<script>caricaUtente('$username','$line[3]','$line[4]', '$line[5]', '$line[6]')</script>";
+                        echo "<script>caricaUtente('$username','$line[3]','$line[4]', '$line[5]', '$line[6]'); location.href='../Utente_Loggato.html';</script>";
                     }
                 }
             }

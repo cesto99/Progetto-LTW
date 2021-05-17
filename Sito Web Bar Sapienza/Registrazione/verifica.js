@@ -29,7 +29,7 @@ function caricaUtente(user, matr, nom, cogn, nasc){
     localStorage.utente="";
     var utente={username: user, matricola: matr, nome: nom, cognome:cogn, nascita:nasc};
     localStorage.utente=JSON.stringify(utente);
-    location.href="../Utente_Loggato.html";
+    
 }
 
 function stampaNome(){
@@ -86,7 +86,7 @@ function ErrorMsg() {
         localStorage.verifica = "false";
     
     }
-    localStorage.clear();
+    localStorage.verifica="";
 }
 
 

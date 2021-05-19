@@ -11,17 +11,15 @@
                 header("Location: Utente_Loggato.html");
             }
             else {
-                    
-                $username=$_POST['user'];
-                $numero_carta=$_POST['numero'];
-
-                $q2 = "DELETE FROM 'carte' WHERE 'carte'.'username' = $username AND 'numero'= $numero_carta";
-                $data = pg_query_params( $dbconn, $q2, array ($username, $numero, $mese, $anno, $cvv, $titolare)); //potrbbe andar bene???????
-                if ($data) {                           
-                    header("Location: Utente_Loggato.html");
+                $numero=$_POST['numero'];
+                $q2 = "DELETE FROM carte WHERE numero= $1";
+                $data = pg_query_params( $dbconn, $q2, array ($numero));
+                if($data){
+                    echo "<script>eliminaCarta('$numero'); location.href='Metodo_di_pagamento.html'</script>";
+                }
+                
                 
             }  
-        }
-    ?>
+        ?>
 </body>
 </html>

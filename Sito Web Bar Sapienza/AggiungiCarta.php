@@ -27,7 +27,7 @@
                     $q3 = "INSERT INTO carte VALUES($1, $2, $3, $4, $5, $6)";
                         $data = pg_query_params( $dbconn, $q3, array ($username, $numero, $mese, $anno, $cvv, $titolare));
                         if ($data) {
-                           header("Location: Utente_Loggato.html");
+                           echo "<script>caricaCarte('$username','$numero','$mese','$anno','$cvv','$titolare'); location.href='Metodo_di_pagamento.html'</script>";
                         }  
                 }
                 else{

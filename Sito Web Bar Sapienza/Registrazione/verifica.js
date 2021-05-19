@@ -141,18 +141,33 @@ function vediCarta(){
     for(var i=0;i<n;i++){
     $("#carte").append('<br>'+
         '<div class="card container">'+
-            '<div class="container"><br>'+
+            '<form action="EliminaCarta.php" method="POST"><br>'+
                 '<div style= "width:25%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
-                '<input type="text" readonly value="'+u.card[i].numero+'"></div>'+
+                '<input type="text" name="numero" readonly value="'+u.card[i].numero+'"></div>'+
                 '<div style= "width:25%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
                 '<input type="text" readonly value="'+u.card[i].mese+'/'+u.card[i].anno+'"></div>'+
                 '<div style= "width:25%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
                 '<input type="text" readonly value="'+u.card[i].cvv+'"></div>'+
                 '<div style="width:79%; position: relative;"><label> Titolare: </label>'+
                 '<input type="text" readonly value="'+u.card[i].titolare+'"></div><br>'+
-                '<div><button class="btn btn-secondary pos_el" action="EliminaCarta.php"> Elimina </button> </a> </div>'+
-           '</div>'+
+                '<div><button class="btn btn-secondary pos_el" name="ElCart"> Elimina </button> </a> </div>'+
+           '</form>'+
         '</div>'+
         '<br>');
     }
+}
+
+function eliminaCarta(num){
+    var u=JSON.parse(localStorage.utente)
+    var v=u.card;
+    var j=0;
+    var arr=[];
+    for(var i=0;i<v.length;i++){
+        if(v[i].numero!=num){
+            arr[j]=v[i];
+            j++;
+        }
+    }
+    u.card=arr;
+    localStorage.utente=JSON.stringify(u);
 }

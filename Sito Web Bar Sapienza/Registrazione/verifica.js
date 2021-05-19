@@ -27,7 +27,7 @@ function confronta_password() {
 // ------ Funzioni per mostrare nome utente ------ //
 function caricaUtente(user, matr, nom, cogn, nasc){
     localStorage.utente="";
-    var utente={username: user, matricola: matr, nome: nom, cognome:cogn, nascita:nasc};
+    var utente={username: user, matricola: matr, nome: nom, cognome:cogn, nascita:nasc, card: []};
     localStorage.utente=JSON.stringify(utente);
     
 }
@@ -123,4 +123,36 @@ function caricaDati() {
     document.getElementsByName("cogn")[0].value = u.cognome;
     document.getElementsByName("nascita")[0].value = u.nascita;
     document.getElementsByName("matr")[0].value = u.matricola;
+}
+
+function caricaCarte(uC,num,mes,ann,cv,tit){
+    var u=JSON.parse(localStorage.utente)
+    var n=u.card.length;
+    if(mes>=1 && mes<=9)mes='0'+mes;
+    var c={userC:uC, numero:num, mese:mes, anno:ann,cvv:cv, titolare:tit};
+    u.card[n]=c;
+    localStorage.utente=JSON.stringify(u);
+}
+
+function vediCarta(){
+    
+    var u=JSON.parse(localStorage.utente);
+    var n=u.card.length;
+    for(var i=0;i<n;i++){
+    $("#carte").append('<br>'+
+        '<div class="card container">'+
+            '<div class="container"><br>'+
+                '<div style= "width:25%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
+                '<input type="text" readonly value="'+u.card[i].numero+'"></div>'+
+                '<div style= "width:25%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
+                '<input type="text" readonly value="'+u.card[i].mese+'/'+u.card[i].anno+'"></div>'+
+                '<div style= "width:25%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
+                '<input type="text" readonly value="'+u.card[i].cvv+'"></div>'+
+                '<div style="width:79%; position: relative;"><label> Titolare: </label>'+
+                '<input type="text" readonly value="'+u.card[i].titolare+'"></div><br>'+
+                '<div><button class="btn btn-secondary pos_el" action="EliminaCarta.php"> Elimina </button> </a> </div>'+
+           '</div>'+
+        '</div>'+
+        '<br>');
+    }
 }

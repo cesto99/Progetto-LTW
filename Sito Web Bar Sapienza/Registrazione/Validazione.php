@@ -28,7 +28,14 @@
                     }
                     else {
                         $line=pg_fetch_array($result, 0, PGSQL_NUM);
-                        echo "<script>caricaUtente('$username','$line[3]','$line[4]', '$line[5]', '$line[6]'); location.href='../Utente_Loggato.html';</script>";
+                        echo "<script>caricaUtente('$username','$line[3]','$line[4]', '$line[5]', '$line[6]'); </script>";
+                        $q3 = "select * from carte where username = $1";
+                        $result2 = pg_query_params($dbconn, $q3, array($username));
+                        while($line2= pg_fetch_array($result2, null, PGSQL_NUM)){
+                            echo "<script>caricaCarte('$line2[0]','$line2[1]','$line2[2]','$line2[3]','$line2[4]','$line2[5]')</script>";
+                        }
+                        echo "<script>location.href='../Utente_Loggato.html'</script>";
+                     
                     }
                 }
             }

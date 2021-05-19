@@ -15,14 +15,15 @@
                 //c'è da cambiare il tipo di mese su pg admin, da integer a string perchè la funzione date restituisce una stringa
                 $username = $_POST ['user'];
                 $numero = $_POST ['numero'];
-                $mese = $_POST ['scadenza'][0]; //non so se vanno bene [0] e [1]
-                $anno = $_POST ['scadenza'][1];
+                $data = $_POST ['scadenza'];
+                $mese = date("m",strtotime($data));
+                $anno = date("Y",strtotime($data));
                 $cvv =$_POST ['CVV'];
                 $titolare =$_POST ['titolare'];
-                $q2="SELECT Count(username) FROM 'utenti' WHERE username = $1";
+                $q2="select * from utenti where username = $1";
 
-                if ($q2 == 1) 
-                {
+                $result = pg_query_params($dbconn, $q2, array($username));
+                if ($line=pg_fetch_array($result, null, PGSQL_ASSOC)) {
                     $q3 = "INSERT INTO carte VALUES($1, $2, $3, $4, $5, $6)";
                         $data = pg_query_params( $dbconn, $q3, array ($username, $numero, $mese, $anno, $cvv, $titolare));
                         if ($data) {

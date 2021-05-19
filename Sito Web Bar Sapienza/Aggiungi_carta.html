@@ -36,7 +36,6 @@
                                 <div class="visa container">
                                     <input type="hidden" id="user" name="user">
 
-                                    <input type="hidden" id="mese" name="user">
                                     Metodo di pagamento: <br>
                                     <select name="Tipologia di Carta prepagata"> 
                                         <option value="00" selected onclick="Verifica(00)"> MasterCard</option>
@@ -48,15 +47,15 @@
                                         <input type="text" name="titolare" placeholder="Nome e cognome"><br>
                                     <br>
                                     Numero Carta: <br>
-                                        <input type="text" name="numero" pattern="[0-9]*" inputmode="numeric" maxlength="19" placeholder="ad es. 1234 5678 9012 3456"><br> 
+                                        <input type="text" name="numero" pattern="([0-9]{4}[ ]{0,1}){4}" placeholder="ad es. 1234 5678 9012 3456"><br> 
 
                                     <br>
                                     Data di scadenza: <br>
-                                        <input type="month" id="scadenza"  name="scadenza" pattern="[0-9]*" > <br>
+                                        <input type="month" id="scadenza"  name="scadenza"> <br>
                                     <br>
                 
                                     Codice CVV <br>
-                                        <input type="text" name="CVV" pattern="[0-9]*" inputmode="numeric" maxlength="3" placeholder="ad es. 000"><br>
+                                        <input type="text" name="CVV" pattern="[0-9]{3}" placeholder="ad es. 000"><br>
                                     <br>
                                     
                                 </div>

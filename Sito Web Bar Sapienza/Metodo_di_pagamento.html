@@ -10,9 +10,10 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="./css/Css Menù a tendina.css">
         <link rel="stylesheet" href="./Css_form.css">
+        <link rel="stylesheet" type="text/css" href="Registrazione/Style_Login.css">
     </head>
     
-    <body onload="caricaPagine(); vediCarta();">
+    <body onload="caricaPagine(); vediCarta(); msg()">
         <div class="main-wrapper">
             <div class="nav-background" id="intest"></div>
 
@@ -22,6 +23,10 @@
                     <header class="topbar" id="inf"></header>
     
                     <nav id="menu"></nav>
+
+                    <div id="message-container">
+                        <!-- Qui comparirá lil messaggio -->
+                    </div>
 
                     <!-- Aggiungere nome utente-->
                     <div class="container" id="carte">

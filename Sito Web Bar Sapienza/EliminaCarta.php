@@ -15,7 +15,7 @@
                 $q2 = "DELETE FROM carte WHERE numero= $1";
                 $data = pg_query_params( $dbconn, $q2, array ($numero));
                 if($data){
-                    echo "<script>eliminaCarta('$numero'); location.href='Metodo_di_pagamento.html'</script>";
+                    echo "<script> elimina_carta(); eliminaCarta('$numero'); location.href='Metodo_di_pagamento.html'</script>";
                 }
                 
                 

@@ -1,3 +1,16 @@
+// ------ Funzioni JS per aggiunta/eliminazione metodi di pagamento ------ //
+
+function aggiungi_carta() {
+    localStorage.messaggio = "CartaAggiunta";
+    location.href = "Metodo_di_pagamento.html";
+}
+
+function elimina_carta() {
+    localStorage.messaggio = "CartaElminata";
+    location.href = "Metodo_di_pagamento.html";
+}
+
+
 // ------ Funzioni JS per messaggi di errore ------ //
 function verifica_utente1() {
     localStorage.verifica = "UtenteGiaRegistrato";
@@ -108,6 +121,20 @@ function msg() {
             $("#message-container").append("<div class=\"titolo msg center\">\
                                             <h3 style=\"color:rgb(0, 153, 0)\">\
                                             <p>I dati sono stati aggiornati correttamente!</p>\
+                                            </h3>\</div>");
+            break;
+        
+        case "CartaAggiunta":
+            $("#message-container").append("<div class=\"titolo msg center\">\
+                                            <h3 style=\"color:rgb(0, 153, 0)\">\
+                                            <p>Il metodo di pagamento è aggiunto correttamente!</p>\
+                                            </h3>\</div>");
+            break;
+        
+        case "CartaElminata":
+            $("#message-container").append("<div class=\"titolo error center\">\
+                                            <h3 style=\"color:rgb(153, 0, 0)\">\
+                                            <p>il metodo di pagamento è stato eliminato correttamente!</p>\
                                             </h3>\</div>");
             break;
     }

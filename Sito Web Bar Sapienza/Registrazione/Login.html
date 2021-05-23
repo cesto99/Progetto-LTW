@@ -1,73 +1,70 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <title>Login utente</title>
-        <link rel="stylesheet" type="text/css" href="Style_Login.css">
-        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-        <script src="verifica.js"></script>
+        <script src="verifica.js"></script> <!--Funzioni messaggi su schermo-->
         <link rel="stylesheet" type="text/css" href="animation.css">
-    </head>
+        <link rel="stylesheet" type="text/css" href="Style_Login.css">
     
+        <link rel="stylesheet" href="../css/style.css"> <!--Per colore e forma del bottone-->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--Formato testo-->
+    </head>
+
     <!-- Chiama la funzione modifica che serve per variare il messaggio di errore -->
-    <body class="corpo" onload="ErrorMsg()">
-        <a href="../index.html"> <button class="btn btn-secondary">HOME</button></a>
-        <div class="container">
-            
-            <div id="error-container" class="fade-in">
-                <!-- Qui comparirá l'errore -->
-            </div>
-
-            <div class="login-box">
-                <div class="row">
-                    <div class="col-md-6 login-left">
-                        <h2 class="titolo">Accedi</h2>
-                        <form action="validazione.php" method="POST">
-                            
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" id="user" name="user" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="pass">Password</label>
-                                <input type="password" id="password" name="password" class="form-control" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="rememberMe">
-                                    <label class="custom-control-label" for="rememberMe">Ricordati di me</label>
-                                </div>
-                            </div>
-                            
-                            <!-- da rivedere sintassi --> 
-                            <div class="d-flex justify-content-center mt-3 login_container"> 
-                                <button type="submit" name="acc" class="btn btn-reg"> Accedi </button>
-                            </div>
-
-                        </form>
-
-                        <div class="mt-4">
-                            <!-- da rivedere sintassi --> 
-                            <div class="d-flex justify-content-center links">
-                                Non hai un account? <a href="signup.html" class="ml-2">Registrati</a>
-                            </div>
-                            <!-- da implementare il recupero della password? -->
-                            <div class="d-flex justify-content-center links">
-                                <a href="#">Hai dimenticato la password?</a> 
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+    <body class="background" onload="ErrorMsg()">
+        
+        <!-- <div class="titolo">
+            <a href="../index.html"> 
+            <img src="../icons/Uniroma1.svg.png" width="400" height="150">  
+            </a>
         </div>
+        <br> -->
+
+        <div id="error-container" class="fade-in">
+            <!-- Qui comparirá il messaggio -->
+        </div>
+        <br>
+
+        <div class="login-card center"> 
+            <h1 class="titolo">Accedi</h1>
+            <form action="validazione.php" method="POST">
+                <div> 
+                    <div>
+                        <label for="username">Username</label> <br>
+                        <input type="text" id="user" name="user" class="form-control" required>
+                    </div>
+                    <div>
+                        <label for="pass">Password</label> <br>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rememberMe">
+                            <label class="custom-control-label" for="rememberMe">Ricordati di me</label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="titolo"> 
+                        <button type="submit" name="acc" class="btn btn-secondary"> Accedi </button>
+                    </div>
+                    <br> 
+                </div>
+            </form>
+            
+            <div>
+                <!-- da rivedere sintassi --> 
+                <div class="titolo">
+                    Non hai un account? <a href="signup.html" class="ml-2">Registrati</a>
+                </div>
+            </div>            
+        </div> 
+        
+        
+        
+        
+        
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>    
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     </body>
-
 </html>
-
- 
-

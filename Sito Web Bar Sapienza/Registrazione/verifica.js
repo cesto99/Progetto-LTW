@@ -42,6 +42,7 @@ function caricaUtente(user, matr, nom, cogn, nasc){
     localStorage.utente="";
     var utente={username: user, matricola: matr, nome: nom, cognome:cogn, nascita:nasc, card: []};
     localStorage.utente=JSON.stringify(utente);
+    localStorage.carrello=0;
     
 }
 
@@ -159,6 +160,7 @@ function caricaCarte(uC,num,mes,ann,cv,tit){
     var c={userC:uC, numero:num, mese:mes, anno:ann,cvv:cv, titolare:tit};
     u.card[n]=c;
     localStorage.utente=JSON.stringify(u);
+    
 }
 
 function vediCarta(){

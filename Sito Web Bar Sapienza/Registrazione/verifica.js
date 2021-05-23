@@ -127,7 +127,7 @@ function msg() {
         case "CartaAggiunta":
             $("#message-container").append("<div class=\"titolo msg center\">\
                                             <h3 style=\"color:rgb(0, 153, 0)\">\
-                                            <p>Il metodo di pagamento è aggiunto correttamente!</p>\
+                                            <p>Il metodo di pagamento è stato aggiunto correttamente!</p>\
                                             </h3>\</div>");
             break;
         

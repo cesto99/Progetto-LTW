@@ -5,64 +5,58 @@
         <script src="verifica.js"></script> <!--Funzioni messaggi su schermo-->
         <link rel="stylesheet" type="text/css" href="animation.css">
         <link rel="stylesheet" type="text/css" href="Style_Login.css">
-    
         <link rel="stylesheet" href="../css/style.css"> <!--Per colore e forma del bottone-->
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--Formato testo-->
     </head>
 
-    <!-- Chiama la funzione modifica che serve per variare il messaggio di errore -->
+    <!-- onload chiama la funzione ErrorMsg che serve per variare il messaggio di errore -->
     <body class="background" onload="ErrorMsg()">
-        
-        <!-- <div class="titolo">
-            <a href="../index.html"> 
-            <img src="../icons/Uniroma1.svg.png" width="400" height="150">  
-            </a>
+        <div>
+            <header class="navbar"><a href="../index.html"> 
+                <button class="button back-btn">Torna alla Home</button></a>
+            </header>
+            
         </div>
-        <br> -->
-
+        <br>        
         <div id="error-container" class="fade-in">
-            <!-- Qui comparirá il messaggio -->
+            <!-- Qui comparirá il messaggio di errore -->
         </div>
         <br>
 
         <div class="login-card center"> 
             <h1 class="titolo">Accedi</h1>
             <form action="validazione.php" method="POST">
-                <div> 
-                    <div>
-                        <label for="username">Username</label> <br>
-                        <input type="text" id="user" name="user" class="form-control" required>
-                    </div>
-                    <div>
-                        <label for="pass">Password</label> <br>
-                        <input type="password" id="password" name="password" class="form-control" required>
-                    </div>
-                    <div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="rememberMe">
-                            <label class="custom-control-label" for="rememberMe">Ricordati di me</label>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="titolo"> 
-                        <button type="submit" name="acc" class="btn btn-secondary"> Accedi </button>
-                    </div>
-                    <br> 
+                 
+                <div>
+                    <label for="username">Username</label> <br>
+                    <input type="text" id="user" name="user" required>
                 </div>
+                <div>
+                    <label for="pass">Password</label> <br>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <div>
+                        <input type="checkbox" id="rememberMe">
+                        <label class="custom-control-label" for="rememberMe">Ricordati di me</label>
+                    </div>
+                </div>
+                <br>
+                <div class="titolo"> 
+                    <button type="submit" name="acc" class="button button-secondary"> Accedi </button>
+                </div>
+    
             </form>
-            
-            <div>
-                <!-- da rivedere sintassi --> 
+            <br>
+
+            <div> 
                 <div class="titolo">
-                    Non hai un account? <a href="signup.html" class="ml-2">Registrati</a>
+                    Non hai un account? <a href="signup.html">Registrati</a>
                 </div>
-            </div>            
+            </div>   
+            <br>   
+                  
         </div> 
-        
-        
-        
-        
-        
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

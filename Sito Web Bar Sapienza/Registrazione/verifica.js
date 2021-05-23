@@ -70,30 +70,30 @@ function ErrorMsg() {
         
         case "UtenteGiaRegistrato":
             $("#error-container").append("<div id=\"errore\" class=\"titolo error center\">\
-                                            <h3 style=\"color:rgb(153, 0, 0)\">\
-                                            <p>Errore!</p> <p>L'utente inserito è già registrato</p>\
-                                            </h3>\</div>");
+                                            <h4 style=\"color:rgb(163, 0, 0)\">\
+                                            Errore!<br>L'utente inserito è già registrato\
+                                            </h4>\</div>");
             break;
         
         case "UtenteNonRegistrato":
             $("#error-container").append("<div id=\"errore\" class=\"titolo error center\">\
-                                            <h3 style=\"color:rgb(153, 0, 0)\">\
-                                            <p>Errore!</p> <p>Spiacente, non sei un utente registrato</p>\
-                                            </h3>\</div>");
+                                            <h4 style=\"color:rgb(163, 0, 0)\">\
+                                            Errore!<br>Spiacente, non sei un utente registrato\
+                                            </h4>\</div>");
             break;
         
         case "PasswordErrata":
             $("#error-container").append("<div id=\"errore\" class=\"titolo error center\">\
-                                            <h3 style=\"color:rgb(153, 0, 0)\">\
-                                            <p>Errore!</p> <p>La password inserita non è corretta</p>\
-                                            </h3>\</div>");
+                                            <h4 style=\"color:rgb(163, 0, 0)\">\
+                                            Errore!<br>La password inserita non è corretta\
+                                            </h4>\</div>");
             break;
 
         case "PasswordDiversa":
             $("#error-container").append("<div id=\"errore\" class=\"titolo error center\">\
-                                            <h3 style=\"color:rgb(153, 0, 0)\">\
-                                            <p>Errore!</p> <p>Le due password inserite devono essere uguali!</p>\
-                                            </h3>\</div>");
+                                            <h4 style=\"color:rgb(163, 0, 0)\">\
+                                            Errore!<br>Le due password inserite devono essere uguali!\
+                                            </h4>\</div>");
             break;
         
         default:
@@ -120,23 +120,23 @@ function msg() {
     switch(localStorage.messaggio) {
         case "DatiAggiornati":
             $("#message-container").append("<div class=\"titolo msg center\">\
-                                            <h3 style=\"color:rgb(0, 153, 0)\">\
+                                            <h4 style=\"color:rgb(0, 163, 0)\">\
                                             <p>I dati sono stati aggiornati correttamente!</p>\
-                                            </h3>\</div>");
+                                            </h4>\</div>");
             break;
         
         case "CartaAggiunta":
             $("#message-container").append("<div class=\"titolo msg center\">\
-                                            <h3 style=\"color:rgb(0, 153, 0)\">\
+                                            <h4 style=\"color:rgb(0, 163, 0)\">\
                                             <p>Il metodo di pagamento è stato aggiunto correttamente!</p>\
-                                            </h3>\</div>");
+                                            </h4>\</div>");
             break;
         
         case "CartaElminata":
             $("#message-container").append("<div class=\"titolo error center\">\
-                                            <h3 style=\"color:rgb(153, 0, 0)\">\
+                                            <h4 style=\"color:rgb(163, 0, 0)\">\
                                             <p>il metodo di pagamento è stato eliminato correttamente!</p>\
-                                            </h3>\</div>");
+                                            </h4>\</div>");
             break;
     }
     localStorage.messaggio = "";

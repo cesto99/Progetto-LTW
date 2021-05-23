@@ -11,20 +11,20 @@
         <link rel="stylesheet" href="./css/Css Menù a tendina.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="./Negozio.css">
+        <script type = "text/javascript" src = "vue.min.js"></script>
     </head>
     
     <body onload="caricaPagine()">
+        
         <div class="main-wrapper">
             <div class="nav-background" id="intest"></div>
 
             <div class="site-content-wrapper">
                
-                <div class="site-content">
+                <div class="site-content" id="app">
                     <header class="topbar" id="inf"></header>
     
                     <nav id="menu"></nav>
-
-                    <!-- Scrivi da qui-->
                     <div class="boxContainer posizione">
                         <table class="elementsContainer">
                             <tr>
@@ -40,6 +40,40 @@
                         </table>
 
                     </div>
+                    <section class="top-products">
+                        <div class="container">
+                            <h1 class="section-heading">Prodotti Migliori</h1>
+                            <div class="slider">
+                                <button class="slider-btn prev-btn"><img src="./icons/pre.svg" alt=""></button>
+                                <button class="slider-btn next-btn"><img src="./icons/next.svg" alt=""></button>
+                                <div class="food-slider">
+                                    <div class="food-card magic-shadow-sm" v-for="x in products">
+                                        <div class="product-image flex items-center justify-center">
+                                            <img v-bind:src=x.image alt="">
+                                        </div>
+                                        <hr>
+                                        <div>
+                                            <h2 class="text-center">{{x.product}}</h2>
+                                            <h4 class="text-center">{{x.description}}</h4>
+                                            <div class="stars flex justify-center items-center">
+                                                <img src="./icons/start-filled.svg" alt="" v-for="y in x.rating">
+                                                <img src="./icons/star-grey.svg" alt="" v-for="z in 5 - x.rating">
+                                            </div>
+                                            <div class="price text-center">{{x.price}}</div>
+                                            <div class="flex justify-center">
+                                                <button v-on:click="addCarr()">
+                                                    <img src="./icons/cart-2.svg" alt="">
+                                                    <span >Aggiungi al carrello</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </section>
                     <section class="our-services" id="serv"></section>
 
                     <footer id="foot"></footer>
@@ -49,6 +83,7 @@
                             Copyright © 2020 .All rights reserved by Marco Paglialunga</a>.
                         </div>
                     </footer>
+                    
                 </div>
             </div>
         </div>
@@ -59,6 +94,8 @@
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="intestazione.js"></script>
         <script type="text/javascript" src="registrazione/verifica.js"></script>
+        <script type="text/javascript" src="negozio.js"></script>
+        
     </body>
 
 

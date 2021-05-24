@@ -11,7 +11,7 @@
             user=postgres password=ciaociao99")
             or die('Could not connect:'.pg_last_error() );
             if (!(isset($_POST ['reg']))) {
-                header("Location: ../index.html");
+                header("Location: ../Home/index.html");
             }
             else {
                 $username = $_POST['user'];
@@ -31,7 +31,7 @@
                         $q2 = "insert into utenti values($1, $2, $3)";
                         $data = pg_query_params( $dbconn, $q2, array ($username, $password1, $email));
                         if ($data) {
-                           header("Location: ../Utente_Loggato.html");
+                           header("Location: ../Utente/Utente_Loggato.html");
                         }  
                     }
                     // Altrimenti do il messaggio di errore

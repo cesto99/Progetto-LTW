@@ -9,7 +9,7 @@
             user=postgres password=ciaociao99")
             or die('Could not connect: '. pg_last_error());
             if (!(isset($_POST ['agg2']))) {
-                header("Location: Utente_Loggato.html");
+                header("Location: ../Utente/Utente_Loggato.html");
             }
             
             else {
@@ -31,10 +31,6 @@
                            // chiamo la funzio JS per il messaggio su schermo e per caricare i dati della carta
                            echo "<script> aggiungi_carta(); caricaCarte('$username','$numero','$mese','$anno','$cvv','$titolare'); location.href='Metodo_di_pagamento.html'</script>";
                         }  
-                }
-                else{
-                    echo "controlla_campi()"; //da implementare
-                    // header("Location: Utente_Loggato.html");
                 }
                 
             }

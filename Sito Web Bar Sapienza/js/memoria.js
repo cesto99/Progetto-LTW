@@ -18,7 +18,7 @@ function scriviNome(){
 
 function esci(){
     localStorage.clear();
-    location.href="../index.html"
+    location.href="../Home/index.html"
 }
 
 function mettiUtente(){
@@ -37,7 +37,7 @@ function caricaDati() {
 function caricaCarte(uC,num,mes,ann,cv,tit){
     var u=JSON.parse(localStorage.utente)
     var n=u.card.length;
-    if(mes>=1 && mes<=9)mes='0'+mes;
+    if(mes>=1 && mes<=9 && mes[0]!='0')mes='0'+mes;
     var c={userC:uC, numero:num, mese:mes, anno:ann,cvv:cv, titolare:tit};
     u.card[n]=c;
     localStorage.utente=JSON.stringify(u);

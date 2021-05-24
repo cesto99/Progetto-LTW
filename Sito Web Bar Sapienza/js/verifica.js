@@ -108,7 +108,7 @@ function msg() {
         case "CartaElminata":
             $("#message-container").append("<div class=\"titolo error center\">\
                                             <h4 style=\"color:rgb(163, 0, 0)\">\
-                                            <p>il metodo di pagamento è stato eliminato correttamente!</p>\
+                                            <p>Il metodo di pagamento è stato eliminato correttamente!</p>\
                                             </h4>\</div>");
             break;
     }

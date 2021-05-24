@@ -11,7 +11,7 @@
             user=postgres password=ciaociao99")
             or die('Could not connect: '. pg_last_error());
             if(!(isset($_POST['acc']))){
-                header("Location: ../index.html");
+                header("Location: ../Home/index.html");
             }
             else{
                 $username = $_POST['user'];

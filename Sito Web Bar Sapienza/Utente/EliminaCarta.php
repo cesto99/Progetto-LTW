@@ -9,7 +9,7 @@
             user=postgres password=ciaociao99")
             or die('Could not connect: '. pg_last_error());
             if (!(isset($_POST ['ElCart']))) {
-                header("Location: Utente_Loggato.html");
+                header("Location: ../Utente/Utente_Loggato.html");
             }
             else {
                 $numero=$_POST['numero'];
@@ -17,7 +17,7 @@
                 $data = pg_query_params( $dbconn, $q2, array ($numero));
                 if($data){
                     // chiamo la funzio JS per il messaggio su schermo e per caricare i dati della carta
-                    echo "<script> elimina_carta(); eliminaCarta('$numero'); location.href='Metodo_di_pagamento.html'</script>";
+                    echo "<script> elimina_carta(); eliminaCarta('$numero'); location.href='../Utente/Metodo_di_pagamento.html'</script>";
                 }
             }  
         ?>

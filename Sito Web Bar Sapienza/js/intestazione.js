@@ -71,9 +71,9 @@ else{
     '</div>'+
     '<div class="navbar magic-shadow">'+
         '<div class="container flex justify-center">'+
-            '<a href="../index.html" >Home</a>'+
-            '<a href="../Info.html">Info</a>'+
-            '<a class="neg" href="../Utente/Negozio.html">Negozio</a>'+
+            '<a href="../Home/index.html" >Home</a>'+
+            '<a href="../Home/Info.html">Info</a>'+
+            '<a class="neg" href="../Negozio/Negozio.html">Negozio</a>'+
             '<a href="#">Contatti</a>'+
         '</div>'+
     '</div>');
@@ -104,9 +104,9 @@ else{
         '<div class="box">'+
             '<h3>Quik Links</h3>'+
             '<ul>'+
-                '<li><a href="../index.html">Home</a></li>'+
-                '<li><a href="../Info.html">Info</a</li>'+
-                '<li><a class="neg" href="../Utente/Negozio.html">Negozio</a</li>'+
+                '<li><a href="../Home/index.html">Home</a></li>'+
+                '<li><a href="../Home/Info.html">Info</a</li>'+
+                '<li><a class="neg" href="../Negozio/Negozio.html">Negozio</a</li>'+
                 '<li><a href="../Registrazione/Login.html">Registrati o Accedi</a></li>'+
             '</ul>'+
         '</div>'+
@@ -139,9 +139,10 @@ else{
                 arr[i].href="../Registrazione/Login.html";
             }
             else {
-                arr[i].href="../Utente/Negozio.html";
+                arr[i].href="../Negozio/Negozio.html";
             }
         }
+
 }
 
 function mostra_tendina() {
@@ -168,7 +169,7 @@ function vediCarta(){
     for(var i=0;i<n;i++){
     $("#carte").append('<br>'+
         '<div class="card container">'+
-            '<form action="EliminaCarta.php" method="POST"><br>'+
+            '<form action="../Utente/EliminaCarta.php" method="POST"><br>'+
                 '<div style= "width:25%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
                 '<input type="text" name="numero" readonly value="'+u.card[i].numero+'"></div>'+
                 '<div style= "width:25%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
@@ -183,32 +184,3 @@ function vediCarta(){
         '<br>');
     }
 }
-
-$(document).ready(function(){
-    $('.food-slider').slick({
-       autoplay:true,
-      slidesToShow:3,
-      slidesToScroll:1,
-      prevArrow:".prev-btn",
-      nextArrow:".next-btn",
-      responsive:[
-         {
-            breakpoint:992,
-            settings:{
-             slidesToShow:2,
-            }
-         },
-         {
-          breakpoint:768,
-          settings:{
-           slidesToShow:1,
-          }
-       }
-      ]
- 
-    });
- 
-    $('.nav-trigger').click(function(){
-       $('.site-content-wrapper').toggleClass('scaled');
-    })
- });

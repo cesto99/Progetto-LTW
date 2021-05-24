@@ -1,16 +1,28 @@
-function mostra_tendina() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+$(document).ready(function(){
+   $('.food-slider').slick({
+      autoplay:true,
+     slidesToShow:3,
+     slidesToScroll:1,
+     prevArrow:".prev-btn",
+     nextArrow:".next-btn",
+     responsive:[
+        {
+           breakpoint:992,
+           settings:{
+            slidesToShow:2,
+           }
+        },
+        {
+         breakpoint:768,
+         settings:{
+          slidesToShow:1,
+         }
       }
-    }
-  }
-}
+     ]
+
+   });
+
+   $('.nav-trigger').click(function(){
+      $('.site-content-wrapper').toggleClass('scaled');
+   })
+});

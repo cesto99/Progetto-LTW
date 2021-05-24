@@ -1,0 +1,95 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Il Bar della Sapienza</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="../css/Css_form.css">
+        <link rel="stylesheet" href="../css/Css Menù a tendina.css">
+                
+    </head>
+    
+    <body onload="caricaPagine(); mettiUtente();">
+        <div class="main-wrapper">
+            <div class="site-content-wrapper">
+               
+                <div class="site-content">
+                    <header class="topbar" id="inf"></header>
+    
+                    <nav id="menu"></nav>
+                    <!-- Aggiungere nome utente-->
+                    <div class="container ">
+                        <div class="welcome flex items-center">
+                            <h1>Aggiungi metodo di pagamento</h1> <br>
+                            
+                        </div>
+                        <div class="card grigio container"> 
+                            <form method="post" action="AggiungiCarta.php"> <!--Non so se si deve implementare un'action-->
+                                <br>
+                                <div class="visa container">
+                                    <input type="hidden" id="user" name="user">
+
+                                    Metodo di pagamento: <br>
+                                    <select name="Tipologia di Carta prepagata"> 
+                                        <option value="00" selected onclick="Verifica(00)"> MasterCard</option>
+                                        <option value="01" selected onclick="Verifica(01)"> Visa </option>
+                                        
+                                        
+                                    </select> <br>
+                                    Titolare della carta: <br>
+                                        <input type="text" name="titolare" placeholder="Nome e cognome"><br>
+                                    <br>
+                                    Numero Carta: <br>
+                                        <input type="text" name="numero" pattern="([0-9]{4}[ ]{0,1}){4}" placeholder="ad es. 1234 5678 9012 3456"><br> 
+
+                                    <br>
+                                    Data di scadenza: <br>
+                                        <input type="month" id="scadenza"  name="scadenza"> <br>
+                                    <br>
+                
+                                    Codice CVV <br>
+                                        <input type="text" name="CVV" pattern="[0-9]{3}" placeholder="ad es. 000"><br>
+                                    <br>
+                                    
+                                </div>
+                                <div class="visa container">
+                                    <button class="btn btn-secondary" type="submit" name="agg2">Aggiungi</button> 
+                                    <button class="btn btn-secondary" type="reset" >Cancella</button>
+                                    <br>
+                                </div>
+                            </form>
+                            
+                        
+                        </div>
+                    </div>
+                    <br>
+                    <section class="our-services" id="serv"></section>
+                    
+                    <footer id="foot"></footer>
+
+                    <footer class="copyright">
+                        <div>
+                            Copyright © 2020 .All rights reserved by Marco Paglialunga</a>.
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script type="text/javascript" src="../js/intestazione.js"></script>
+        <script type="text/javascript" src="../js/memoria.js"></script>
+        <script type="text/javascript" src="../js/prodotti.js"></script>
+        <script type="text/javascript" src="../js/verifica.js"></script>
+    </body>
+
+
+
+
+</html>

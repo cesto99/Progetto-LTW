@@ -370,6 +370,7 @@ section.top-products{
     position:absolute;
     bottom:-40px;
 }
+
 section.top-products .food-slider .food-card{
     background:var(--heaven);
     padding:1.5rem 0;
@@ -379,6 +380,8 @@ section.top-products .food-slider .food-card{
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
 }
+
+
 section.top-products .food-slider .food-card .product-image img{
     width:80%;
     height:200px;

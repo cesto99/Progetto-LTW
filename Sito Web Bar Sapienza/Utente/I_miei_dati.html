@@ -1,0 +1,89 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Il Bar della Sapienza</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="../css/Css_form.css">
+        <link rel="stylesheet" href="../css/Css Menù a tendina.css">
+        <link rel="stylesheet" type="text/css" href="../css/Style_Login.css">
+        <link rel="stylesheet" type="text/css" href="../css/animation.css">
+    </head>
+    
+    <body onload="caricaPagine(); mettiUtente(); msg(); ErrorMsg(); caricaDati()">
+        <div class="main-wrapper">
+            
+            <div class="site-content-wrapper">
+                
+                <div class="site-content">
+                    <header class="topbar" id="inf"></header>
+    
+                    <nav id="menu"></nav>
+                    <!-- Aggiungere nome utente-->
+                    
+                    <div id="message-container" class="fade-in">
+                        <!-- Qui comparirá lil messaggio -->
+                    </div>
+                    
+                    <div class="container center">
+                        <div class="welcome flex items-center">
+                            <h1 class="titolo">I MIEI DATI</h1> <br>
+                            
+                        </div>
+                        <div class="card grigio container"> 
+                            <form method="post" name="aggiorna" action="Aggiorna_I_miei_dati.php"> 
+                                <!--Deve essere ancora implementato il file Js che controlla i campi dei dati-->
+                                <br>
+                                <div class="container">
+                                    <input type="hidden" id="user" name="user">
+                                    Nome: <br>
+                                        <input type="text" name="nome" pattern="([a-zA-Z]+[ ]{0,1}[a-zA-Z]+)+" placeholder="Nome"><br>
+                                    <br>
+                                    Cognome: <br>
+                                        <input type="text" name="cogn" pattern="([a-zA-Z]+[ ]{0,1}[a-zA-Z]+)+"  placeholder="Cognome"><br> 
+
+                                    <br>
+                                    Data di nascita: <br>
+                                        <input type="date" name="nascita" name="nascita"> <br>
+                                    <br>
+
+                                    Matricola: <br>
+                                        <input type="text" name="matr" pattern="[0-9]*"  maxlength="7" placeholder="Matricola"><br>
+                                    <br>
+                                    <div class="visa container">
+                                        <button class="btn btn-secondary" type="submit" name="agg">Aggiorna dati</button> <!-- Da Implementare -->
+                                        <button class="btn btn-secondary" type="reset" >Cancella</button>  <br> <!-- Ricontrollare se va bene -->
+                                        <br>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        
+                        </div>
+                    </div>
+                    <br>
+                    <section class="our-services" id="serv"></section>
+
+                    <footer id="foot"></footer>
+
+                    <footer class="copyright">
+                        <div>
+                            Copyright © 2020 .All rights reserved by Marco Paglialunga</a>.
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script type="text/javascript" src="../js/intestazione.js"></script>
+        <script type="text/javascript" src="../js/memoria.js"></script>
+        <script type="text/javascript" src="../js/prodotti.js"></script>
+        <script type="text/javascript" src="../js/verifica.js"></script>
+    </body>
+</html>

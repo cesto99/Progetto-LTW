@@ -2,7 +2,8 @@
 <html>
     <head>
         <!-- includo il file JS in cui definisco le funzioni per i messaggi di errore -->
-        <script type=text/javascript src="verifica.js"></script> 
+        <script src="../js/verifica.js"></script>
+        <script src="../js/memoria.js"></script>
     </head>
     <body>
         <?php
@@ -34,7 +35,7 @@
                         while($line2= pg_fetch_array($result2, null, PGSQL_NUM)){
                             echo "<script>caricaCarte('$line2[0]','$line2[1]','$line2[2]','$line2[3]','$line2[4]','$line2[5]');</script>";
                         }
-                        echo "<script>location.href='../Utente_Loggato.html'</script>";
+                        echo "<script>location.href='../Utente/Utente_Loggato.html'</script>";
                      
                     }
                 }

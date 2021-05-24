@@ -2,7 +2,8 @@
 <html>
     <head>
         <!-- includo il file JS in cui definisco le funzioni per i messaggi di errore -->
-        <script src="verifica.js"></script> 
+        <script src="../js/verifica.js"></script>
+        <script src="../js/memoria.js"></script>
     </head>
     <body>
         <?php

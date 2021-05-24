@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/Css Menù a tendina.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+ 
 </head>
 
-<body  onload="caricaPagine()">
+<body  onload="caricaPagine(); caricaHome()">
     <div class="main-wrapper">
         
         <div class="site-content-wrapper">
@@ -47,110 +51,8 @@
                         <div class="slider">
                             <button class="slider-btn prev-btn"><img src="./icons/pre.svg" alt=""></button>
                             <button class="slider-btn next-btn"><img src="./icons/next.svg" alt=""></button>
-                            <div class="food-slider">
-                                <div class="food-card magic-shadow-sm">
-                                    <div class="product-image flex items-center justify-center">
-                                        <img src="./images/Insalata_1 (1).png" alt="">
-                                    </div>
-                                    <hr>
-                                    <div>
-                                        <h2 class="text-center">Insalata estiva</h2>
-                                        <h4 class="text-center">Ingredienti: Lattuga, Pomodorini, Mozzarella, Peperoni, Cipolla</h4>
-                                        <div class="stars flex justify-center items-center">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                        </div>
-                                        <div class="price text-center">
-                                            4.00€
-                                        </div>
-                                        <div class="flex justify-center">
-                                            <button>
-                                                <img src="./icons/cart-2.svg" alt="">
-                                                <span>Aggiungi al carrello</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="food-card magic-shadow-sm">
-                                    <div class="product-image flex items-center justify-center">
-                                        <img src="./images/tramezzini.png" alt="">
-                                    </div>
-                                    <hr>
-                                    <div>
-                                        <h2 class="text-center">Tramezzini</h2>
-                                        <h4 class="text-center">Ingredienti: Insalata, Pomodori e Formaggio</h4>
-                                        <div class="stars flex justify-center items-center">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/star-grey.svg" alt="">
-                                        </div>
-                                        <div class="price text-center">
-                                            3.25€
-                                        </div>
-                                        <div class="flex justify-center">
-                                            <button>
-                                                <img src="./icons/cart-2.svg" alt="">
-                                                <span>Aggiungi al carrello</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="food-card magic-shadow-sm">
-                                    <div class="product-image flex items-center justify-center">
-                                        <img src="./images/Patatine_1.png" alt="">
-                                    </div>
-                                    <hr>
-                                    <div>
-                                        <h2 class="text-center">Patatine CrickCrock</h2>
-                                        <div class="stars flex justify-center items-center">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/star-grey.svg" alt="">
-                                        </div>
-                                        <div class="price text-center">
-                                            1.00€
-                                        </div>
-                                        <div class="flex justify-center">
-                                            <button>
-                                                <img src="./icons/cart-2.svg" alt="">
-                                                <span>Aggiungi al carrello</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="food-card magic-shadow-sm">
-                                    <div class="product-image flex items-center justify-center">
-                                        <img src="./images/Panino_2.png" alt="">
-                                    </div>
-                                    <hr>
-                                    <div>
-                                        <h2 class="text-center">Panino</h2>
-                                        <h4 class="text-center">Ingredienti: Bacon, Cheddar, Pollo</h4>
-                                        <div class="stars flex justify-center items-center">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/start-filled.svg" alt="">
-                                            <img src="./icons/star-grey.svg" alt="">
-                                            <img src="./icons/star-grey.svg" alt="">
-                                        </div>
-                                        <div class="price text-center">
-                                            1.25€
-                                        </div>
-                                        <div class="flex justify-center">
-                                            <button>
-                                                <img src="./icons/cart-2.svg" alt="">
-                                                <span>Aggiungi al carrello</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="food-slider" id="conten">
+                              
                             </div>
                         </div>
                         
@@ -207,7 +109,7 @@
                     </div>
                     <div class="map">
                         <iframe
-                            src="https://www.google.com/maps/vt/data=rI4Dys8gWFgxWzuWsRFucGofoWrFcbmYcRGwft-fvHr6yzdmvQXNViIFUpmISxPysAdMUnnOXQ9gAcKsWZLIA-CBa0hBeLku6Lj73LaMhZkM9j6QbAFYbwU5M2RkZ1m1NrRHuVbZUIGE-p831ySvrTup3QxOIFNCbh1cyNiH1XDfJRSQkjVP"
+                            
                             
                             width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                     </div>
@@ -223,12 +125,10 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="text/javascript" src="intestazione.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="registrazione/verifica.js"></script>
+    <script type="text/javascript" src="./js/intestazione.js"></script>
+    <script type="text/javascript" src="./js/memoria.js"></script>
+    <script type="text/javascript" src="./js/prodotti.js"></script>
+    <script type="text/javascript" src="./js/verifica.js"></script>
 </body>
 
 </html>

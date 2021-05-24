@@ -2,67 +2,40 @@
 
 function aggiungi_carta() {
     localStorage.messaggio = "CartaAggiunta";
-    location.href = "Metodo_di_pagamento.html";
+    location.href = "../Utente/Metodo_di_pagamento.html";
 }
 
 function elimina_carta() {
     localStorage.messaggio = "CartaElminata";
-    location.href = "Metodo_di_pagamento.html";
+    location.href = "../Utente/Metodo_di_pagamento.html";
 }
 
 
 // ------ Funzioni JS per messaggi di errore ------ //
 function verifica_utente1() {
     localStorage.verifica = "UtenteGiaRegistrato";
-    location.href = "signup.html";
+    location.href = "../Registrazione/signup.html";
 }
 
 function verifica_utente2() {
     localStorage.verifica = "UtenteNonRegistrato";
-    location.href = "login.html";
+    location.href = "../Registrazione/login.html";
 }
 
 // Controllo correttezza password inserita
 function controlla_password() {
     localStorage.verifica = "PasswordErrata";
-    location.href = "login.html";
+    location.href = "../Registrazione/login.html";
 }
 
 // Controllo della password di conferma
 function confronta_password() {
     localStorage.verifica = "PasswordDiversa";
-    location.href = "signup.html";
+    location.href = "../Registrazione/signup.html";
 
 }
 
 
-
-// ------ Funzioni per mostrare nome utente ------ //
-function caricaUtente(user, matr, nom, cogn, nasc){
-    localStorage.utente="";
-    var utente={username: user, matricola: matr, nome: nom, cognome:cogn, nascita:nasc, card: []};
-    localStorage.utente=JSON.stringify(utente);
-    localStorage.carrello=0;
-    
-}
-
-function stampaNome(){
-    var u=JSON.parse(localStorage.utente);
-    return u.username;
-}
-
-function scriviNome(){
-    $("#ut").append('Ciao '+stampaNome()+'!');
-}
-
-function esci(){
-    localStorage.clear();
-    location.href="../index.html"
-}
-
-function mettiUtente(){
-  document.getElementById("user").value=stampaNome();
-}
 
 function ErrorMsg() {
 
@@ -108,7 +81,7 @@ function ErrorMsg() {
 // ------ Funzioni per messaggi generici su schermo ------ //
 function aggiorna_dati() {
     localStorage.messaggio = "DatiAggiornati"; // la variabile messaggio serve per printare messaggi su schermo
-    location.href = "i_miei_dati.html";
+    location.href = "../Utente/I_miei_dati.html";
 
 }
 
@@ -144,59 +117,4 @@ function msg() {
 
 
 
-function caricaDati() {
-    var u = JSON.parse(localStorage.utente)
-    document.getElementById("user").value = u.username;
-    document.getElementsByName("nome")[0].value = u.nome;
-    document.getElementsByName("cogn")[0].value = u.cognome;
-    document.getElementsByName("nascita")[0].value = u.nascita;
-    document.getElementsByName("matr")[0].value = u.matricola;
-}
 
-function caricaCarte(uC,num,mes,ann,cv,tit){
-    var u=JSON.parse(localStorage.utente)
-    var n=u.card.length;
-    if(mes>=1 && mes<=9)mes='0'+mes;
-    var c={userC:uC, numero:num, mese:mes, anno:ann,cvv:cv, titolare:tit};
-    u.card[n]=c;
-    localStorage.utente=JSON.stringify(u);
-    
-}
-
-function vediCarta(){
-    
-    var u=JSON.parse(localStorage.utente);
-    var n=u.card.length;
-    for(var i=0;i<n;i++){
-    $("#carte").append('<br>'+
-        '<div class="card container">'+
-            '<form action="EliminaCarta.php" method="POST"><br>'+
-                '<div style= "width:25%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
-                '<input type="text" name="numero" readonly value="'+u.card[i].numero+'"></div>'+
-                '<div style= "width:25%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
-                '<input type="text" readonly value="'+u.card[i].mese+'/'+u.card[i].anno+'"></div>'+
-                '<div style= "width:25%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
-                '<input type="text" readonly value="'+u.card[i].cvv+'"></div>'+
-                '<div style="width:79%; position: relative;"><label> Titolare: </label>'+
-                '<input type="text" readonly value="'+u.card[i].titolare+'"></div><br>'+
-                '<div><button class="btn btn-secondary pos_el" name="ElCart"> Elimina </button> </a> </div>'+
-           '</form>'+
-        '</div>'+
-        '<br>');
-    }
-}
-
-function eliminaCarta(num){
-    var u=JSON.parse(localStorage.utente)
-    var v=u.card;
-    var j=0;
-    var arr=[];
-    for(var i=0;i<v.length;i++){
-        if(v[i].numero!=num){
-            arr[j]=v[i];
-            j++;
-        }
-    }
-    u.card=arr;
-    localStorage.utente=JSON.stringify(u);
-}

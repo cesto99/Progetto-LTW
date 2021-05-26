@@ -38,7 +38,7 @@ else{
                 '</div>'+
             '</div>'+
             '<div>'+
-                '<img src="../icons/cart.svg" style="width:25px; height:25px; margin-left:40px"></img>'+
+                '<a href="../Negozio/Miei_Prodotti.html"><img src="../icons/cart.svg" style="width:25px; height:25px; margin-left:40px"></img></a>'+
                 '<p id="carr" style="position relative; float:right; font-size:18px"></p>'+
                 '<p style="margin-left:40px">Carrello</p>'+
             '</div>'+
@@ -46,7 +46,7 @@ else{
     '</div>');
 
     scriviNome();
-    document.getElementById("carr").innerText=localStorage.carrello;
+    document.getElementById("carr").innerText=JSON.parse(localStorage.utente).carrello;
 }
 
     $("#menu").append(''+
@@ -166,21 +166,84 @@ function vediCarta(){
     
     var u=JSON.parse(localStorage.utente);
     var n=u.card.length;
-    for(var i=0;i<n;i++){
-    $("#carte").append('<br>'+
-        '<div class="card container">'+
-            '<form action="../Utente/EliminaCarta.php" method="POST"><br>'+
-                '<div style= "width:25%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
-                '<input type="text" name="numero" readonly value="'+u.card[i].numero+'"></div>'+
-                '<div style= "width:25%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
-                '<input type="text" readonly value="'+u.card[i].mese+'/'+u.card[i].anno+'"></div>'+
-                '<div style= "width:25%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
-                '<input type="text" readonly value="'+u.card[i].cvv+'"></div>'+
-                '<div style="width:79%; position: relative;"><label> Titolare: </label>'+
-                '<input type="text" readonly value="'+u.card[i].titolare+'"></div><br>'+
-                '<div><button class="btn btn-secondary pos_el" name="ElCart"> Elimina </button> </a> </div>'+
-           '</form>'+
-        '</div>'+
-        '<br>');
+    if(localStorage.seleziona=="daScegliere"){
+        for(var i=0;i<n;i++){
+            $("#carte").append('<br>'+
+                '<div class="card container">'+
+                    '<form><br>'+
+                        '<div style= "width:25%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
+                        '<input type="text" name="numero" readonly value="'+u.card[i].numero+'"></div>'+
+                        '<div style= "width:25%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
+                        '<input type="text" readonly value="'+u.card[i].mese+'/'+u.card[i].anno+'"></div>'+
+                        '<div style= "width:25%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
+                        '<input type="text" readonly value="'+u.card[i].cvv+'"></div>'+
+                        '<div style="width:79%; position: relative;"><label> Titolare: </label>'+
+                        '<input type="text" readonly value="'+u.card[i].titolare+'"></div><br>'+
+                    '</form>'+
+                   '<div><button class="btn btn-secondary pos_el" onclick="impostaCarta('+i+')">Seleziona</button> </a> </div>'+
+                '</div>'+
+            '<br>');
+        }
+        document.getElementsByClassName("selez")[0].innerText="Seleziona carta per il pagamento"
+        document.getElementsByClassName("selez")[1].href="";
+        document.getElementsByClassName("selez")[1].innerHTML="";
     }
+    else{
+        for(var i=0;i<n;i++){
+            $("#carte").append('<br>'+
+                '<div class="card container">'+
+                    '<form action="../Utente/EliminaCarta.php" method="POST"><br>'+
+                        '<div style= "width:25%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
+                        '<input type="text" name="numero" readonly value="'+u.card[i].numero+'"></div>'+
+                        '<div style= "width:25%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
+                        '<input type="text" readonly value="'+u.card[i].mese+'/'+u.card[i].anno+'"></div>'+
+                        '<div style= "width:25%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
+                        '<input type="text" readonly value="'+u.card[i].cvv+'"></div>'+
+                        '<div style="width:79%; position: relative;"><label> Titolare: </label>'+
+                        '<input type="text" readonly value="'+u.card[i].titolare+'"></div><br>'+
+                        '<div><button class="btn btn-secondary pos_el" name="ElCart"> Elimina </button> </a> </div>'+
+                   '</form>'+
+                '</div>'+
+            '<br>');
+        }
+    }
+}
+
+function caricaPagamento(){
+    var num=localStorage.seleziona;
+    var u=JSON.parse(localStorage.utente);
+    for(var i=0;i<u.card.length;i++){
+        if(u.card[i].numero==num){
+            $("#carte").append('<br>'+
+                '<div class="card container">'+
+                    '<form><br>'+
+                        '<label for="edificio">Seleziona edificio</label>'+
+                        '<select name="edificio">'+
+                            '<option value="4">RM002</option>'+
+                            '<option value="4">RM004</option>'+
+                            '<option value="5">RM005</option>'+
+                            '<option value="5">RM006</option>'+
+                            '<option value="5">RM014</option>'+
+                            '<option value="7">RM015</option>'+
+                            '<option value="10">RM018</option>'+
+                            '<option value="10">RM019</option>'+
+                        '</select>'+
+                        '<div style= "width:25%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
+                        '<input type="text" name="numero" readonly value="'+u.card[i].numero+'"></div>'+
+                        '<div style= "width:25%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
+                        '<input type="text" readonly value="'+u.card[i].mese+'/'+u.card[i].anno+'"></div>'+
+                        '<div style= "width:25%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
+                        '<input type="text" readonly value="'+u.card[i].cvv+'"></div>'+
+                        '<div style="width:79%; position: relative;"><label> Titolare: </label>'+
+                        '<input type="text" readonly value="'+u.card[i].titolare+'"></div><br>'+
+                    '</form>'+
+                    '<div><label> Totale: </label>'+
+                   '<input type="text" readonly style="width:8%; text-align:right" id="prezzo">'+
+                   '<button name="paga" class="btn btn-secondary pos_el" onclick="pagamento()"> Paga</button> </a></div>'+
+                '</div>'+
+            '<br>');
+        }
+    }
+    document.getElementById("prezzo").value=localStorage.prezzo;
+    if(document.getElementById("prezzo").value=='0.00€') document.getElementsByName("paga")[0].disabled=true;
 }

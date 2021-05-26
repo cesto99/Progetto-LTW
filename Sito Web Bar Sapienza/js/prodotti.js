@@ -255,3 +255,92 @@ function slide(){
         $('.site-content-wrapper').toggleClass('scaled');
      })
 }
+
+function caricaProd(){
+    
+    var u=JSON.parse(localStorage.utente);
+    var n=u.prodotti.length;
+    var p=0;
+    for(var i=0;i<n;i++){
+        $("#conten").append(''+
+        '<div class="card container" style="background-color: white">'+
+            '<div>'+
+                '<h3>'+u.prodotti[i].product+'  '+u.prodotti[i].price+'   '+'x'+u.prodotti[i].qta+'</h2>'+
+    '       </div>'+
+            '<div class="product-image flex items-center justify-center style="width:30%; height:30%">'+
+                '<img src="'+u.prodotti[i].image+'" alt="" style="width:30%; height:30%">'+
+            '</div>'+
+            '<div>'+
+                '<h5>'+u.prodotti[i].description+'</h4>'+
+            '</div>'+
+            '<div><button class="btn btn-secondary pos_el" onclick="eliminaCarr('+i+',)">Elimina dal carrello</button> </a> </div>'+
+        '</div><br><br>');
+       p=p+parseFloat(u.prodotti[i].price)*u.prodotti[i].qta;
+    }
+    if(p==parseInt(p)){
+        document.getElementById("prezzo").value=p+'.00€';
+        if(document.getElementById("prezzo").value=="0.00€") document.getElementsByName("paga")[0].disabled=true;
+        localStorage.prezzo= document.getElementById("prezzo").value;  
+        return;
+    } 
+
+    var s=JSON.stringify(p);
+    var pos=0;
+    for(var x=0;x<s.length;x++){
+        if(s[x]=='.')pos=x;
+    }
+    if(s.length<pos+3) document.getElementById("prezzo").value=p+'0€';
+   
+    else document.getElementById("prezzo").value=p+'€';
+    
+    if(document.getElementById("prezzo").value=="0.00€") document.getElementsByName("paga")[0].disabled=true;
+    localStorage.prezzo= document.getElementById("prezzo").value;  
+}
+
+function eliminaCarr(index){
+    var u=JSON.parse(localStorage.utente)
+    var v=u.prodotti;
+    var j=0;
+    var arr=[];
+    for(var i=0;i<v.length;i++){
+        if(i!=index){
+            arr[j]=v[i];
+            j++;
+        }
+        else{
+            if(v[i].qta>1){
+                v[i].qta-=1;
+                arr[j]=v[i];
+                j++;
+            }
+        }
+    }
+    u.prodotti=arr;
+    u.carrello=u.carrello-1;
+    localStorage.utente=JSON.stringify(u);
+    document.getElementById("carr").innerText=JSON.parse(localStorage.utente).carrello;
+    document.getElementById("conten").innerHTML="";
+    caricaProd();
+}
+
+function paga(){
+    var u=JSON.parse(localStorage.utente);
+    localStorage.seleziona="daScegliere";
+    if(u.card.length==0) location.href="../Utente/Aggiungi_carta.html";
+    else location.href="../Utente/Metodo_di_pagamento.html";
+}
+
+function pagamento(){
+    var min=document.getElementsByName("edificio")[0].value;
+    $("#message-container").append("<div class=\"titolo msg center\">\
+    <h4 style=\"color:rgb(0, 163, 0)\">\
+    <p>Pagamento effettuato correttamente!<br>Consegneremo in "+min+" minuti</p>\
+    </h4>\</div>");
+    var u=JSON.parse(localStorage.utente);
+    u.carrello=0;
+    u.prodotti=[];
+    localStorage.prezzo="0.00€";
+    localStorage.utente=JSON.stringify(u);
+    document.getElementsByName("paga")[0].disabled=true;
+    document.getElementById("carr").innerText=JSON.parse(localStorage.utente).carrello;
+}

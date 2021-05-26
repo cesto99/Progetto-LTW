@@ -1,10 +1,8 @@
 // ------ Funzioni per mostrare nome utente ------ //
 function caricaUtente(user, matr, nom, cogn, nasc){
     localStorage.utente="";
-    var utente={username: user, matricola: matr, nome: nom, cognome:cogn, nascita:nasc, card: []};
+    var utente={username: user, matricola: matr, nome: nom, cognome:cogn, nascita:nasc, card: [], carrello:0, prodotti:[]};
     localStorage.utente=JSON.stringify(utente);
-    localStorage.carrello=0;
-    
 }
 
 function stampaNome(){
@@ -58,4 +56,10 @@ function eliminaCarta(num){
     }
     u.card=arr;
     localStorage.utente=JSON.stringify(u);
+}
+
+function impostaCarta(index){
+    var u=JSON.parse(localStorage.utente)
+    localStorage.seleziona=u.card[index].numero;
+    location.href="../Negozio/Paga.html"
 }

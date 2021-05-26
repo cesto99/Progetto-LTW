@@ -193,7 +193,7 @@ var app = new Vue ({
             }
         ],
             
-        cart: JSON.parse(localStorage.carrello)
+        cart: JSON.parse(localStorage.utente).carrello
     },
     methods : {
         caricaCarr: function (){
@@ -202,19 +202,22 @@ var app = new Vue ({
 
         addCarr: function(i){
             this.cart+=1;
-            localStorage.carrello=JSON.parse(localStorage.carrello)+1;
             this.caricaCarr();
-            var obj=this.products[i];
-            if(localStorage.prodotti==undefined){
-                var arr=[obj];
-                localStorage.prodotti=JSON.stringify(arr);
+            var u=JSON.parse(localStorage.utente);
+            u.carrello=u.carrello+1;
+            var n=u.prodotti.length;
+            var prod=this.products[i];
+            for(var j=0;j<n;j++){
+                if(u.prodotti[j].product==prod.product){
+                    u.prodotti[j].qta+=1;
+                    localStorage.utente=JSON.stringify(u);
+                    return;
+                }
             }
-            else{
-                var u=JSON.parse(localStorage.prodotti);
-                var n=u.length;
-                u[n]=obj;
-                localStorage.prodotti=JSON.stringify(u);
-            }
+            var obj={product:prod.product, description:prod.description, image:prod.image, price:prod.price, rating:prod.rating, qta:1};
+            u.prodotti[n]=obj;
+            localStorage.utente=JSON.stringify(u);
+            
         }
         
     }

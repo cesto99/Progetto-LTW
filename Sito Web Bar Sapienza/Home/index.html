@@ -13,7 +13,7 @@
     
 </head>
 
-<body  onload="caricaPagine(); caricaHome()">
+<body  onload="caricaPagine(); caricaHome(); HomeActive()">
     <div class="main-wrapper">
         
         <div class="site-content-wrapper">
@@ -128,6 +128,11 @@
     <script type="text/javascript" src="../js/memoria.js"></script>
     <script type="text/javascript" src="../js/prodotti.js"></script>
     <script type="text/javascript" src="../js/verifica.js"></script>
+    <script type="text/javascript">
+        function HomeActive(){
+            document.getElementById("hm").style= "background:var(--primary);color:var(--pure);";
+        }
+    </script>    
 </body>
 
 </html>

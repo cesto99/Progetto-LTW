@@ -111,6 +111,22 @@ function msg() {
                                             <p>Il metodo di pagamento è stato eliminato correttamente!</p>\
                                             </h4>\</div>");
             break;
+        
+        case "MessaggioPagamento":
+            if(localStorage.minuti=='0'){
+                $("#message-container").append("<div class=\"titolo msg center\">\
+                                            <h4 style=\"color:rgb(0, 163, 0)\">\
+                                            <p>Pagamento effettuato correttamente!<br>Vieni a ritirare i tuoi prodotti</p>\
+                                            </h4>\</div>");
+            }
+            else{
+                $("#message-container").append("<div class=\"titolo msg center\">\
+                                                <h4 style=\"color:rgb(0, 163, 0)\">\
+                                                <p>Pagamento effettuato correttamente!<br>Consegneremo in "+localStorage.minuti+" minuti</p>\
+                                                </h4>\</div>");
+            }
+            localStorage.minuti="";
+            break;
     }
     localStorage.messaggio = "";
 }

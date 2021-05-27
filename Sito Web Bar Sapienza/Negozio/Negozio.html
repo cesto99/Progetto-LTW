@@ -11,10 +11,12 @@
         <link rel="stylesheet" href="../css/Css Menù a tendina.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="../css/Negozio.css">
+        <link rel="stylesheet" type="text/css" href="../css/animation.css">
+        <link rel="stylesheet" type="text/css" href="../css/Style_Login.css">
         <script type = "text/javascript" src = "../js/vue.min.js"></script>
     </head>
     
-    <body onload="caricaPagine(); slide()">
+    <body onload="caricaPagine(); slide(); msg(); NegActive()">
         
         <div class="main-wrapper">
             <div class="nav-background" id="intest"></div>
@@ -25,7 +27,10 @@
                     <header class="topbar" id="inf"></header>
     
                     <nav id="menu"></nav>
-                    <div class="boxContainer posizione">
+                    <div id="message-container" class="fade-in">
+                        <!-- Qui comparirá lil messaggio -->
+                    </div>
+                    <!--<div class="boxContainer posizione">
                         <table class="elementsContainer">
                             <tr>
                                 <td>
@@ -39,7 +44,7 @@
                             </tr>
                         </table>
 
-                    </div>
+                    </div>-->
                     <section class="top-products">
                         <div class="container">
                             <h1 class="section-heading">Prodotti Migliori</h1>
@@ -96,7 +101,11 @@
         <script type="text/javascript" src="../js/prodotti.js"></script>
         <script type="text/javascript" src="../js/verifica.js"></script>
         <script type="text/javascript" src="../js/negozio.js"></script>
-        
+        <script type="text/javascript">
+            function NegActive(){
+                document.getElementById("ng").style= "background:var(--primary);color:var(--pure);";
+            }
+        </script> 
     </body>
 
 

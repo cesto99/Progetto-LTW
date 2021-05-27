@@ -331,11 +331,11 @@ function paga(){
 }
 
 function pagamento(){
-    var min=document.getElementsByName("edificio")[0].value;
-    $("#message-container").append("<div class=\"titolo msg center\">\
-    <h4 style=\"color:rgb(0, 163, 0)\">\
-    <p>Pagamento effettuato correttamente!<br>Consegneremo in "+min+" minuti</p>\
-    </h4>\</div>");
+    var min;
+    if(document.getElementsByName("edificio")[0].style.display=='none') min=0;
+    else min=document.getElementsByName("edificio")[0].value;
+    localStorage.messaggio="MessaggioPagamento";
+    localStorage.minuti=min;
     var u=JSON.parse(localStorage.utente);
     u.carrello=0;
     u.prodotti=[];
@@ -343,4 +343,5 @@ function pagamento(){
     localStorage.utente=JSON.stringify(u);
     document.getElementsByName("paga")[0].disabled=true;
     document.getElementById("carr").innerText=JSON.parse(localStorage.utente).carrello;
+    location.href="../Negozio/Negozio.html";
 }

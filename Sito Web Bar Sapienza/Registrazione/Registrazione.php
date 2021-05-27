@@ -31,7 +31,7 @@
                         $q2 = "insert into utenti values($1, $2, $3)";
                         $data = pg_query_params( $dbconn, $q2, array ($username, $password1, $email));
                         if ($data) {
-                           header("Location: ../Utente/Utente_Loggato.html");
+                            echo "<script> caricaUtente('$username', '', '', '', ''); location.href='../Home/index.html'; </script>";
                         }  
                     }
                     // Altrimenti do il messaggio di errore

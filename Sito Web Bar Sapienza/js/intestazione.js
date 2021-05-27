@@ -71,10 +71,10 @@ else{
     '</div>'+
     '<div class="navbar magic-shadow">'+
         '<div class="container flex justify-center">'+
-            '<a href="../Home/index.html" >Home</a>'+
-            '<a href="../Home/Info.html">Info</a>'+
-            '<a class="neg" href="../Negozio/Negozio.html">Negozio</a>'+
-            '<a href="#">Contatti</a>'+
+            '<a id="hm" href="../Home/index.html" >Home</a>'+
+            '<a id="if" href="../Home/Info.html">Info</a>'+
+            '<a id="ng" class="neg" href="../Negozio/Negozio.html">Negozio</a>'+
+            '<a id="ct" href="#">Contatti</a>'+
         '</div>'+
     '</div>');
 
@@ -217,8 +217,10 @@ function caricaPagamento(){
             $("#carte").append('<br>'+
                 '<div class="card container">'+
                     '<form><br>'+
+                        '<div><input type="radio" name="scelta" value="ritira" checked><label style="margin-left:2%" for="ritira">Vieni a ritirare</label></div>'+
+                        '<div><input type="radio" name="scelta" value="consegna"><label style="margin-left:2%" for="consegna">Consegniamo noi</label></div><br>'+
                         '<label for="edificio">Seleziona edificio</label>'+
-                        '<select name="edificio">'+
+                        '<select name="edificio" style="display:none">'+
                             '<option value="4">RM002</option>'+
                             '<option value="4">RM004</option>'+
                             '<option value="5">RM005</option>'+
@@ -246,4 +248,11 @@ function caricaPagamento(){
     }
     document.getElementById("prezzo").value=localStorage.prezzo;
     if(document.getElementById("prezzo").value=='0.00€') document.getElementsByName("paga")[0].disabled=true;
+    var v=document.getElementsByName("scelta");
+    for(var k=0;k<v.length;k++){
+        v[k].addEventListener("click",function mostraEdificio(e){
+                                        if (e.target.value=="consegna") document.getElementsByName("edificio")[0].style.display='block';
+                                        else document.getElementsByName("edificio")[0].style.display='none';
+                                        });
+    }
 }

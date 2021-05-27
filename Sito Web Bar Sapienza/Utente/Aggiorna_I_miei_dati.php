@@ -9,7 +9,7 @@
             user=postgres password=ciaociao99")
             or die('Could not connect: '. pg_last_error());
             if (!(isset($_POST ['agg']))) {
-                header("Location: ../Utente/Utente_Loggato.html");
+                header("Location: ../Home/index.html");
             }
             
             else {

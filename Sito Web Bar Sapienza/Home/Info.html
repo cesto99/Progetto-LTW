@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
-<body onload="caricaPagine()">
+<body onload="caricaPagine(); InfoActive()">
     <div class="main-wrapper">
                 
         <div class="site-content-wrapper">
@@ -42,6 +42,11 @@
     <script type="text/javascript" src="../js/memoria.js"></script>
     <script type="text/javascript" src="../js/prodotti.js"></script>
     <script type="text/javascript" src="../js/verifica.js"></script>
+    <script type="text/javascript">
+        function InfoActive(){
+            document.getElementById("if").style= "background:var(--primary);color:var(--pure);";
+        }
+    </script> 
     
 </body>
 </html>

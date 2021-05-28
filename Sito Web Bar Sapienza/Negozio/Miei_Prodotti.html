@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/Css Menù a tendina.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    
+    <link rel="stylesheet" href="../css/Css_form.css">
+
 </head>
 
 <body  onload="caricaPagine(); caricaProd()">
@@ -22,13 +23,12 @@
                 <header class="topbar" id="inf"></header>
 
                 <nav id="menu"> </nav>
-              
-
-                <section class="top-products">
+                <br> <!-- col br si vede l'ombreggiatura -->
+                <section class="white"> 
                     <div class="container">
                         <h1 class="section-heading">I tuoi Prodotti</h1>
                         <div class="slider">
-                            <label> Totale: </label>
+                            <label > Totale: </label>
                             <input type="text" readonly style="width:12%; text-align:right" id="prezzo">
                             <button name="paga" class="btn btn-secondary" onclick="paga()"> Paga </button> <br>
                             <div class="food-slider" id="conten">

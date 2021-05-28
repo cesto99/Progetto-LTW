@@ -263,17 +263,17 @@ function caricaProd(){
     var p=0;
     for(var i=0;i<n;i++){
         $("#conten").append(''+
-        '<div class="card container" style="background-color: white">'+
+        '<div class="card container" style="background-color: rgb(238, 236, 236);">'+
             '<div>'+
-                '<h3>'+u.prodotti[i].product+'  '+u.prodotti[i].price+'   '+'x'+u.prodotti[i].qta+'</h2>'+
+                '<h3>'+'<b>'+u.prodotti[i].product+':  '+u.prodotti[i].price+'   '+' x '+u.prodotti[i].qta+'</b>'+'</h3>'+
     '       </div>'+
             '<div class="product-image flex items-center justify-center style="width:30%; height:30%">'+
                 '<img src="'+u.prodotti[i].image+'" alt="" style="width:30%; height:30%">'+
             '</div>'+
             '<div>'+
-                '<h5>'+u.prodotti[i].description+'</h4>'+
-            '</div>'+
-            '<div><button class="btn btn-secondary pos_el" onclick="eliminaCarr('+i+',)">Elimina dal carrello</button> </a> </div>'+
+                '<font face="Calibri" size="5">'+u.prodotti[i].description+'</font>'+
+            '</div>'+ '<br>' +
+            '<div><button class="btn btn-secondary pos_el" onclick="eliminaCarr('+i+',)">Elimina dal carrello</button> </a> </div> <br>'+
         '</div><br><br>');
        p=p+parseFloat(u.prodotti[i].price)*u.prodotti[i].qta;
     }

@@ -9,11 +9,10 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="../css/Css_form.css">
-        <link rel="stylesheet" href="../css/Css Menù a tendina.css">
-                
+        <link rel="stylesheet" href="../css/Css Menù a tendina.css">        
     </head>
     
-    <body onload="caricaPagine(); mettiUtente();">
+    <body onload="caricaPagine(); mettiUtente(); ErrorMsg()">
         <div class="main-wrapper">
             <div class="site-content-wrapper">
                
@@ -21,14 +20,17 @@
                     <header class="topbar" id="inf"></header>
     
                     <nav id="menu"></nav>
-                    <!-- Aggiungere nome utente-->
+
+                    <div id="error-container" class="fade-in">
+                        <!-- Qui comparirá il messaggio di errore -->
+                    </div>
+
                     <div class="container ">
                         <div class="welcome flex items-center">
-                            <h1>Aggiungi metodo di pagamento</h1> <br>
-                            
+                            <h1>Aggiungi metodo di pagamento</h1> <br>    
                         </div>
                         <div class="card grigio container"> 
-                            <form method="post" action="AggiungiCarta.php"> <!--Non so se si deve implementare un'action-->
+                            <form method="post" action="AggiungiCarta.php"> 
                                 <br>
                                 <div class="visa container">
                                     <input type="hidden" id="user" name="user">

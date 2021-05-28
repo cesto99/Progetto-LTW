@@ -26,11 +26,13 @@
                 $result = pg_query_params($dbconn, $q2, array($username));
                 if ($line=pg_fetch_array($result, null, PGSQL_ASSOC)) {
                     $q3 = "INSERT INTO carte VALUES($1, $2, $3, $4, $5, $6)";
-                        $data = pg_query_params( $dbconn, $q3, array ($username, $numero, $mese, $anno, $cvv, $titolare));
-                        if ($data) {
-                           // chiamo la funzio JS per il messaggio su schermo e per caricare i dati della carta
-                           echo "<script> aggiungi_carta(); caricaCarte('$username','$numero','$mese','$anno','$cvv','$titolare'); location.href='Metodo_di_pagamento.html'</script>";
-                        }  
+                    $data = pg_query_params( $dbconn, $q3, array ($username, $numero, $mese, $anno, $cvv, $titolare));
+                    if ($data) {
+                        // chiamo la funzio JS per il messaggio su schermo e per caricare i dati della carta
+                        echo "<script> aggiungi_carta(); caricaCarte('$username','$numero','$mese','$anno','$cvv','$titolare'); location.href='Metodo_di_pagamento.html'</script>";
+                    }else{
+                        echo "<script> carta_gia_inserita(); </script>";
+                    }
                 }
                 
             }

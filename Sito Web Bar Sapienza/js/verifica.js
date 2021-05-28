@@ -1,5 +1,11 @@
 // ------ Funzioni JS per aggiunta/eliminazione metodi di pagamento ------ //
 
+function carta_gia_inserita(){
+    localStorage.verifica = "CartaGiaAggiunta";
+    location.href = "../Utente/Aggiungi_Carta.html";
+}
+
+
 function aggiungi_carta() {
     localStorage.messaggio = "CartaAggiunta";
     location.href = "../Utente/Metodo_di_pagamento.html";
@@ -68,6 +74,13 @@ function ErrorMsg() {
                                             Errore!<br>Le due password inserite devono essere uguali!\
                                             </h4>\</div>");
             break;
+
+        case "CartaGiaAggiunta":
+            $("#error-container").append("<div id=\"errore\" class=\"titolo error center\">\
+                                            <h4 style=\"color:rgb(163, 0, 0)\">\
+                                            Errore!<br>La Carta inserita è già esistente!\
+                                            </h4>\</div>");
+            break;
         
         default:
         localStorage.verifica = "false";
@@ -130,7 +143,3 @@ function msg() {
     }
     localStorage.messaggio = "";
 }
-
-
-
-

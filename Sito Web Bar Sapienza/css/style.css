@@ -39,7 +39,7 @@
 }
 .grandezza_logo{
     
-    width:640px;
+    width:80%;
     height: 160px;
     
 }
@@ -412,6 +412,9 @@ section.top-products .food-slider .food-card .price{
     color:var(--danger);
     margin-bottom: 1rem;
 }
+.price{
+    font-size: 20px;
+}
 section.top-products .food-slider .food-card button{
     font-family:"Raleway-medium";
     color:var(--secondary);
@@ -465,16 +468,14 @@ section.top-products .food-slider .food-card button:hover{
 }
 
 .prev-btn{
-    position:absolute;
-    top:46%;
-    left:-3rem;
-    z-index: 1;
+    position: relative;
+    float:left;
+    
+    
 }
 .next-btn{
-    position:absolute;
-    top:46%;
-    right:-3rem;
-    z-index: 1;
+    position: relative;
+    left:95%;
 }
 .top-products .slider{
     position: relative;
@@ -871,13 +872,7 @@ footer.copyright a{
 }
 
 @media (max-width:992px){
-    .nav-trigger{
-        display:block;
-    }
-    header.topbar, nav{
-        display:none;
-    }
-
+    
     header.hero {
         margin-top:-4rem;
     }
@@ -885,9 +880,7 @@ footer.copyright a{
         right:-160px;
         top:100px;
     }
-    .top-products .slider-btn{
-        display:none!important;
-    }
+    
     .latest-news .article-wrapper{
         flex-direction:column;
     }
@@ -906,7 +899,8 @@ footer.copyright a{
         flex-direction: column;
     }
     .about-meal .about-meal-wrap img{
-        width:100%;
+        width:55%;
+        height: 55%;
         margin-bottom: 2rem;
     }
 

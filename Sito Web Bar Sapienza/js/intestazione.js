@@ -3,7 +3,7 @@ function caricaPagine(){
     $("#inf").append('' +
     '<div class="container flex justify-between items-center">'+
         '<div class="icons">'+
-            '<a href="#"><img src="../icons/facebook.svg" alt=""></a>'+
+            '<a href="https://www.facebook.com/SapienzaRoma/"><img src="../icons/facebook.svg" alt=""></a>'+
             '<a href="https://www.instagram.com/sapienzaroma/?hl=it"><img src="../icons/instagram.svg" alt=""></a>'+
         '</div>'+
         '<div class="auth flex items-center">'+
@@ -23,7 +23,7 @@ else{
     $("#inf").append('' +
     '<div class="container flex justify-between items-center">'+
         '<div class="icons">'+
-            '<a href="#"><img src="../icons/facebook.svg" alt=""></a>'+
+            '<a href="https://www.facebook.com/SapienzaRoma/"><img src="../icons/facebook.svg" alt=""></a>'+
             '<a href="https://www.instagram.com/sapienzaroma/?hl=it"><img src="../icons/instagram.svg" alt=""></a>'+
         '</div>'+
         '<div class="auth flex items-center">'+
@@ -59,7 +59,7 @@ else{
                     '<h6>331 7479246</h6>'+
                 '</div>'+
             '</div>'+
-            '<div><img  class="grandezza_logo" src="../icons/Uniroma1.svg.png" alt=""></div>'+
+            '<div style="text-align:center"><img class="grandezza_logo" src="../icons/Uniroma1.svg.png" alt=""></div>'+
             '<div class="time flex items-center">'+
                 '<img src="../icons/clock.svg" alt="">'+
                 '<div>'+
@@ -115,7 +115,7 @@ else{
             '<div>'+
                 '<ul>'+
                     '<li>'+
-                        '<a href="HH">'+
+                        '<a href="https://www.facebook.com/SapienzaRoma/">'+
                             '<img src="../icons/facebook.svg" alt="">'+
                             '<span>Facebook</span>'+
                         '</a>'+
@@ -171,11 +171,11 @@ function vediCarta(){
             $("#carte").append('<br>'+
                 '<div class="card container">'+
                     '<form><br>'+
-                        '<div style= "width:25%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
+                        '<div style= "width:40%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
                         '<input type="text" name="numero" readonly value="'+u.card[i].numero+'"></div>'+
-                        '<div style= "width:25%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
+                        '<div style= "width:20%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
                         '<input type="text" readonly value="'+u.card[i].mese+'/'+u.card[i].anno+'"></div>'+
-                        '<div style= "width:25%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
+                        '<div style= "width:15%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
                         '<input type="text" readonly value="'+u.card[i].cvv+'"></div>'+
                         '<div style="width:79%; position: relative;"><label> Titolare: </label>'+
                         '<input type="text" readonly value="'+u.card[i].titolare+'"></div><br>'+
@@ -193,11 +193,11 @@ function vediCarta(){
             $("#carte").append('<br>'+
                 '<div class="card container">'+
                     '<form action="../Utente/EliminaCarta.php" method="POST"><br>'+
-                        '<div style= "width:25%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
+                        '<div style= "width:40%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
                         '<input type="text" name="numero" readonly value="'+u.card[i].numero+'"></div>'+
-                        '<div style= "width:25%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
+                        '<div style= "width:20%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
                         '<input type="text" readonly value="'+u.card[i].mese+'/'+u.card[i].anno+'"></div>'+
-                        '<div style= "width:25%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
+                        '<div style= "width:15%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
                         '<input type="text" readonly value="'+u.card[i].cvv+'"></div>'+
                         '<div style="width:79%; position: relative;"><label> Titolare: </label>'+
                         '<input type="text" readonly value="'+u.card[i].titolare+'"></div><br>'+
@@ -219,7 +219,7 @@ function caricaPagamento(){
                     '<form><br>'+
                         '<div><input type="radio" name="scelta" value="ritira" checked><label style="margin-left:2%" for="ritira">Vieni a ritirare</label></div>'+
                         '<div><input type="radio" name="scelta" value="consegna"><label style="margin-left:2%" for="consegna">Consegniamo noi</label></div><br>'+
-                        '<label for="edificio">Seleziona edificio</label>'+
+                        '<div><label name="edificio" for="edificio" style="display:none">Seleziona edificio</label>'+
                         '<select name="edificio" style="display:none">'+
                             '<option value="4">RM002</option>'+
                             '<option value="4">RM004</option>'+
@@ -229,18 +229,18 @@ function caricaPagamento(){
                             '<option value="7">RM015</option>'+
                             '<option value="10">RM018</option>'+
                             '<option value="10">RM019</option>'+
-                        '</select>'+
-                        '<div style= "width:25%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
+                        '</select></div>'+
+                        '<div style= "width:40%; position:relative; float:left;"><label> Numero Carta: </label><br>'+
                         '<input type="text" name="numero" readonly value="'+u.card[i].numero+'"></div>'+
-                        '<div style= "width:25%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
+                        '<div style= "width:20%; position:relative; float:left; margin-left: 2%"><label> Scadenza: </label><br>'+
                         '<input type="text" readonly value="'+u.card[i].mese+'/'+u.card[i].anno+'"></div>'+
-                        '<div style= "width:25%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
+                        '<div style= "width:15%; position:relative;float:left; margin-left: 2%"><label> CVV: </label><br>'+
                         '<input type="text" readonly value="'+u.card[i].cvv+'"></div>'+
                         '<div style="width:79%; position: relative;"><label> Titolare: </label>'+
                         '<input type="text" readonly value="'+u.card[i].titolare+'"></div><br>'+
                     '</form>'+
                     '<div><label> Totale: </label>'+
-                   '<input type="text" readonly style="width:8%; text-align:right" id="prezzo">'+
+                   '<input type="text" readonly style="width:18%; text-align:right" id="prezzo">'+
                    '<button name="paga" class="btn btn-secondary pos_el" onclick="pagamento()"> Paga</button> </a></div>'+
                 '</div>'+
             '<br>');
@@ -251,8 +251,14 @@ function caricaPagamento(){
     var v=document.getElementsByName("scelta");
     for(var k=0;k<v.length;k++){
         v[k].addEventListener("click",function mostraEdificio(e){
-                                        if (e.target.value=="consegna") document.getElementsByName("edificio")[0].style.display='block';
-                                        else document.getElementsByName("edificio")[0].style.display='none';
-                                        });
+                                        if (e.target.value=="consegna") {
+                                            document.getElementsByName("edificio")[0].style.display='block';
+                                            document.getElementsByName("edificio")[1].style.display='block';
+                                        }
+                                        else{
+                                            document.getElementsByName("edificio")[0].style.display='none';
+                                            document.getElementsByName("edificio")[1].style.display='none';
+                                        } 
+                                });
     }
 }

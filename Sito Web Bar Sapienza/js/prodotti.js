@@ -332,8 +332,8 @@ function paga(){
 
 function pagamento(){
     var min;
-    if(document.getElementsByName("edificio")[0].style.display=='none') min=0;
-    else min=document.getElementsByName("edificio")[0].value;
+    if(document.getElementsByName("edificio")[1].style.display=='none') min=0;
+    else min=document.getElementsByName("edificio")[1].value;
     localStorage.messaggio="MessaggioPagamento";
     localStorage.minuti=min;
     var u=JSON.parse(localStorage.utente);

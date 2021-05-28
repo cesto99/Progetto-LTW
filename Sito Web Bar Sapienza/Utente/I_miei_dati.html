@@ -41,18 +41,18 @@
                                 <div class="container">
                                     <input type="hidden" id="user" name="user">
                                     Nome: <br>
-                                        <input type="text" name="nome" pattern="([a-zA-Z]+[ ]{0,1}[a-zA-Z]+)+" placeholder="Nome"><br>
+                                        <input type="text" name="nome" pattern="([A-Z][a-z]+[ ]{0,1})+" placeholder="Nome" required><br>
                                     <br>
                                     Cognome: <br>
-                                        <input type="text" name="cogn" pattern="([a-zA-Z]+[ ]{0,1}[a-zA-Z]+)+"  placeholder="Cognome"><br> 
+                                        <input type="text" name="cogn" pattern="(([A-Z][a-z]+[ ]{0,1})|([A-Z]'[A-Za-z][a-z]+[ ]{0,1}))+"  placeholder="Cognome" required><br> 
 
                                     <br>
                                     Data di nascita: <br>
-                                        <input type="date" name="nascita" name="nascita"> <br>
+                                        <input type="date" name="nascita" name="nascita" required> <br>
                                     <br>
 
                                     Matricola: <br>
-                                        <input type="text" name="matr" pattern="[0-9]*"  maxlength="7" placeholder="Matricola"><br>
+                                        <input type="text" name="matr" pattern="[0-9]+"  minlength="4" maxlength="7" placeholder="Matricola" required><br>
                                     <br>
                                     <div class="visa container">
                                         <button class="btn btn-secondary" type="submit" name="agg">Aggiorna dati</button> <!-- Da Implementare -->
@@ -72,7 +72,7 @@
 
                     <footer class="copyright">
                         <div>
-                            Copyright © 2020 .All rights reserved by Marco Paglialunga</a>.
+                            Copyright © 2021. All rights reserved by Marco Paglialunga, Enrico Fortuna, Andrea Celestini</a>.
                         </div>
                     </footer>
                 </div>

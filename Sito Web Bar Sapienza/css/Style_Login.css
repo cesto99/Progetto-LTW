@@ -13,7 +13,7 @@ header.navbar{
     background-color: rgb(238, 236, 236);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 20%;  
+    width: 25%;  
     /* vertical | horizontal */
     padding: 8px 30px;   
 }
@@ -51,6 +51,8 @@ header.navbar{
 /* Per centrare i titoli */
 .titolo {
     text-align: center;
+    width:100%;
+    
 }
 
 

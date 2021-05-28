@@ -56,11 +56,11 @@ else{
                 '<img src="../icons/phone.svg" alt="">'+
                 '<div>'+
                     '<h5>Chiamaci</h5>'+
-                    '<h6>331 7479246</h6>'+
+                    '<h6>331 855135</h6>'+
                 '</div>'+
             '</div>'+
             '<div style="text-align:center"><img class="grandezza_logo" src="../icons/Uniroma1.svg.png" alt=""></div>'+
-            '<div class="time flex items-center">'+
+            '<div class="time  items-center">'+
                 '<img src="../icons/clock.svg" alt="">'+
                 '<div>'+
                     '<h5>Orari:</h5>'+
@@ -72,9 +72,8 @@ else{
     '<div class="navbar magic-shadow">'+
         '<div class="container flex justify-center">'+
             '<a id="hm" href="../Home/index.html" >Home</a>'+
-            '<a id="if" href="../Home/Info.html">Info</a>'+
             '<a id="ng" class="neg" href="../Negozio/Negozio.html">Negozio</a>'+
-            '<a id="ct" href="#">Contatti</a>'+
+            '<a id="ct" href="../Home/Chi_siamo.html">Chi Siamo</a>'+
         '</div>'+
     '</div>');
 
@@ -83,12 +82,12 @@ else{
         '<h1 class="section-heading">I nostri Servizi</h1>'+
         '<div class="card-wrapper flex">'+
             '<div class="service-card magic-shadow-sm">'+
-                '<img class="icon" src="../icons/transport.svg" alt="">'+
+                '<img class="icon" src="../icons/usd.svg" alt="">'+
                     '<h2>Ritiro presso il negozio</h2>'+
-                   '<p>Vieni a ritirarlo nel punto del bar situato nella città universitaria</p>'+
+                   '<p>Vieni a ritirarlo nel nostro bar situato nella città universitaria</p>'+
             '</div>'+
             '<div class="service-card magic-shadow-sm">'+
-                '<img class="icon" src="../icons/usd.svg" alt="">'+
+                '<img class="icon" src="../icons/transport.svg" alt="">'+
                 '<h2>Te lo consegniamo noi!</h2>'+
                 "<p>Con un tempo di attesa stabilito te lo consegnamo noi a seconda dell'edificio in cui ti trovi</p>"+
             '</div>'+
@@ -105,9 +104,9 @@ else{
             '<h3>Quik Links</h3>'+
             '<ul>'+
                 '<li><a href="../Home/index.html">Home</a></li>'+
-                '<li><a href="../Home/Info.html">Info</a</li>'+
                 '<li><a class="neg" href="../Negozio/Negozio.html">Negozio</a</li>'+
-                '<li><a href="../Registrazione/Login.html">Registrati o Accedi</a></li>'+
+                '<li><a href="../Registrazione/Signup.html">Registrati</a> \
+                    o <a href="../Registrazione/Login.html">Accedi</li>'+
             '</ul>'+
         '</div>'+
         '<div class="box">'+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Il Bar della Sapienza</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Css Menù a tendina.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/Chi_Siamo.css">
+    <link rel="stylesheet" href="../css/memory.css">
+    <script type = "text/javascript" src = "../js/vue.min.js"></script>
+</head>
+
+<body onload="caricaPagine()">
+    <div class="main-wrapper">
+                
+        <div class="site-content-wrapper">
+           
+            
+            <div class="site-content" id="game">
+                <header class="topbar" id="inf"></header>
+
+                <nav id="menu"></nav>
+                
+                <br>
+                <div class="titolo center">
+                    <h1>Gioca a Memory</h1> <br>  
+                </div>
+                <div style="position: relative; left:62.5%"><button class="btn btn-secondary" v-on:click="inizia()">Inizia</button></div>
+                <br>
+                <div class="contenuto" style="display:none">
+                    
+                    <div class="riga" v-for="x in 4"> 
+                        <div class="carta" v-on:click="scopri(x,y)" v-for="y in 4"><img class="imm" src="../images/carta.png"></div>
+                    
+                    </div>
+                    
+                </div>
+                <div id="message-container" class="fade-in">
+                    <!-- Qui comparirá il messaggio -->
+                </div>
+                
+                <section class="our-services" id="serv"></section>
+                
+                <footer id="foot"></footer>
+                
+                <footer class="copyright">
+                    <div>
+                        Copyright © 2021. All rights reserved by Marco Paglialunga, Enrico Fortuna, Andrea Celestini</a>.
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="../js/intestazione.js"></script>
+    <script type="text/javascript" src="../js/memoria.js"></script>
+    <script type="text/javascript" src="../js/prodotti.js"></script>
+    <script type="text/javascript" src="../js/verifica.js"></script>
+    <script type="text/javascript" src="../js/memory.js"></script>
+    
+    
+</body>
+</html>

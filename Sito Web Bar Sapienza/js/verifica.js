@@ -42,7 +42,6 @@ function confronta_password() {
 }
 
 
-
 function ErrorMsg() {
 
     switch(localStorage.verifica) {
@@ -50,35 +49,35 @@ function ErrorMsg() {
         case "UtenteGiaRegistrato":
             $("#error-container").append("<div id=\"errore\" class=\"titolo error center\">\
                                             <h4 style=\"color:rgb(163, 0, 0)\">\
-                                            Errore!<br>L'utente inserito è già registrato\
+                                            <b>Errore!<br>L'utente inserito è già registrato</b>\
                                             </h4>\</div>");
             break;
         
         case "UtenteNonRegistrato":
             $("#error-container").append("<div id=\"errore\" class=\"titolo error center\">\
                                             <h4 style=\"color:rgb(163, 0, 0)\">\
-                                            Errore!<br>Spiacente, non sei un utente registrato\
+                                            <b>Errore!<br>Spiacente, non sei un utente registrato</b>\
                                             </h4>\</div>");
             break;
         
         case "PasswordErrata":
             $("#error-container").append("<div id=\"errore\" class=\"titolo error center\">\
                                             <h4 style=\"color:rgb(163, 0, 0)\">\
-                                            Errore!<br>La password inserita non è corretta\
+                                            <b>Errore!<br>La password inserita non è corretta</b>\
                                             </h4>\</div>");
             break;
 
         case "PasswordDiversa":
             $("#error-container").append("<div id=\"errore\" class=\"titolo error center\">\
                                             <h4 style=\"color:rgb(163, 0, 0)\">\
-                                            Errore!<br>Le due password inserite devono essere uguali!\
+                                            <b>Errore!<br>Le due password inserite devono essere uguali!</b>\
                                             </h4>\</div>");
             break;
 
         case "CartaGiaAggiunta":
             $("#error-container").append("<div id=\"errore\" class=\"titolo error center\">\
                                             <h4 style=\"color:rgb(163, 0, 0)\">\
-                                            Errore!<br>La Carta inserita è già esistente!\
+                                            <b>Errore!<br>La Carta inserita è già esistente!</b>\
                                             </h4>\</div>");
             break;
         
@@ -107,35 +106,35 @@ function msg() {
         case "DatiAggiornati":
             $("#message-container").append("<div class=\"titolo msg center\">\
                                             <h4 style=\"color:rgb(0, 163, 0)\">\
-                                            <p>I dati sono stati aggiornati correttamente!</p>\
+                                            <p><b>I dati sono stati aggiornati correttamente!</b></p>\
                                             </h4>\</div>");
             break;
         
         case "CartaAggiunta":
             $("#message-container").append("<div class=\"titolo msg center\">\
                                             <h4 style=\"color:rgb(0, 163, 0)\">\
-                                            <p>Il metodo di pagamento è stato aggiunto correttamente!</p>\
+                                            <p><b>Il metodo di pagamento è stato aggiunto correttamente!</b></p>\
                                             </h4>\</div>");
             break;
         
         case "CartaElminata":
-            $("#message-container").append("<div class=\"titolo error center\">\
-                                            <h4 style=\"color:rgb(163, 0, 0)\">\
-                                            <p>Il metodo di pagamento è stato eliminato correttamente!</p>\
+            $("#message-container").append("<div class=\"titolo msg center\">\
+                                            <h4 style=\"color:rgb(0, 163, 0)\">\
+                                            <p><b>Il metodo di pagamento è stato eliminato correttamente!</b></p>\
                                             </h4>\</div>");
             break;
         
         case "MessaggioPagamento":
             if(localStorage.minuti=='0'){
                 $("#message-container").append("<div class=\"titolo msg center\">\
-                                            <h4 style=\"color:rgb(0, 163, 0)\">\
-                                            <p>Pagamento effettuato correttamente!<br>Vieni a ritirare i tuoi prodotti</p>\
-                                            </h4>\</div>");
+                                                <h4 style=\"color:rgb(0, 163, 0)\">\
+                                                <p><b>Pagamento effettuato correttamente!<br>Vieni a ritirare i tuoi prodotti</b></p>\
+                                                </h4>\</div>");
             }
             else{
                 $("#message-container").append("<div class=\"titolo msg center\">\
                                                 <h4 style=\"color:rgb(0, 163, 0)\">\
-                                                <p>Pagamento effettuato correttamente!<br>Consegneremo in "+localStorage.minuti+" minuti</p>\
+                                                <p><b>Pagamento effettuato correttamente!<br>Consegneremo in "+localStorage.minuti+" minuti</b></p>\
                                                 </h4>\</div>");
             }
             localStorage.minuti="";

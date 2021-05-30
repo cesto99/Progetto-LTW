@@ -43,7 +43,7 @@ header.navbar{
 
 /* Sfondo della pagina */
 .background {
-    /*background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)); /* sfumatura */
+    /*background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)); /* sfondo sfumato */
     background-size: cover;
     background-position:center;  
 }
@@ -53,7 +53,6 @@ header.navbar{
     text-align: center;
     width:100%;
 }
-
 
 input[type=text], select, textarea {
     width: 100%;
@@ -88,7 +87,7 @@ input[type=email], select, textarea {
     resize: vertical;
 }
 
-  /* Bottoni */
+/* Bottoni */
 .button{
     padding:0.75rem 0.75rem;
     border-radius:4px;

@@ -101,7 +101,7 @@ else{
             "<p>Un nuovo servizio per praticità e affidabilità all'interno della Città Universitaria </p>"+
         '</div>'+
         '<div class="box">'+
-            '<h3>Quik Links</h3>'+
+            '<h3>Quick Links</h3>'+
             '<ul>'+
                 '<li><a href="../Home/index.html">Home</a></li>'+
                 '<li><a class="neg" href="../Negozio/Negozio.html">Negozio</a></li>'+

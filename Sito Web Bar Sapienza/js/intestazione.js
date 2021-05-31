@@ -104,9 +104,9 @@ else{
             '<h3>Quik Links</h3>'+
             '<ul>'+
                 '<li><a href="../Home/index.html">Home</a></li>'+
-                '<li><a class="neg" href="../Negozio/Negozio.html">Negozio</a</li>'+
-                '<li><a href="../Registrazione/Signup.html">Registrati</a> \
-                    o <a href="../Registrazione/Login.html">Accedi</li>'+
+                '<li><a class="neg" href="../Negozio/Negozio.html">Negozio</a></li>'+
+                '<li><a href="../Registrazione/Signup.html">Registrati</a>'+
+                '<li><a href="../Registrazione/Login.html">Accedi</li>'+
             '</ul>'+
         '</div>'+
         '<div class="box">'+

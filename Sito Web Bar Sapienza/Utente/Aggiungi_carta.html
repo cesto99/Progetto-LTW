@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="../css/Css Menù a tendina.css">        
     </head>
     
-    <body onload="caricaPagine(); mettiUtente(); ErrorMsg()">
+    <body onload="caricaPagine(); mettiUtente(); ErrorMsg(); limiteData()">
         <div class="main-wrapper">
             <div class="site-content-wrapper">
                
@@ -89,6 +89,11 @@
         <script type="text/javascript" src="../js/memoria.js"></script>
         <script type="text/javascript" src="../js/prodotti.js"></script>
         <script type="text/javascript" src="../js/verifica.js"></script>
+        <script type="text/javascript">
+            function limiteData(){
+                document.getElementById("scadenza").min=new Date().toISOString().slice(0,7);
+            }
+        </script>
     </body>
 
 

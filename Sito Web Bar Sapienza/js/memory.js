@@ -15,30 +15,36 @@ var app = new Vue ({
             
         mosse: 0,
         matrice: [[0,1,2,3],[4,5,6,7],[0,1,2,3],[4,5,6,7]],
+        vettore:[0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7],
         xPrec: -1,
         yPrec:-1,
         coppie:0
     },
     methods : {
         scopri: function(x,y){
-            var immagine=this.cards[this.matrice[x-1][y-1]].image;
+            var index=(x-1)*4+y-1;
+            var elem=document.getElementsByClassName("imm")[index];
+            if(elem.style.display == "none" || elem.scoperta) return;
+            var immagine=this.cards[this.vettore[index]].image;
             var immPrec="";
-            if(this.xPrec!=-1) immPrec=this.cards[this.matrice[this.xPrec-1][this.yPrec-1]].image;
-            document.getElementsByClassName("imm")[(x-1)*4+y-1].src=immagine;
+            if(this.xPrec!=-1) immPrec=this.cards[this.vettore[(this.xPrec-1)*4+this.yPrec-1]].image;
+            elem.src=immagine;
+            elem.scoperta=true;
             if(immagine==immPrec){
                 this.coppie+=1;
-                document.getElementsByClassName("imm")[(x-1)*4+y-1].style.display="none";
+                elem.style.display="none";
                 document.getElementsByClassName("imm")[(this.xPrec-1)*4+this.yPrec-1].style.display="none";
+                
                 this.xPrec=-1;
                 this.yPrec=-1; 
                                   
             }
             else if(immPrec!=""){
-                demo((x-1)*4+y-1,(this.xPrec-1)*4+this.yPrec-1);
+                document.getElementsByClassName("imm")[(this.xPrec-1)*4+this.yPrec-1].scoperta=false;
+                demo(index,(this.xPrec-1)*4+this.yPrec-1);
                 this.xPrec=-1;
                 this.yPrec=-1;
-                
-                
+                elem.scoperta=false;
             }
             else{
                 this.xPrec=x;
@@ -51,11 +57,7 @@ var app = new Vue ({
         inizia: function(){
             document.getElementsByClassName("contenuto")[0].style.display="block";
             this.mosse= 0;
-            this.matrice[0]=this.matrice[0].sort(() => Math.random() - 0.5);
-            this.matrice[1]=this.matrice[1].sort(() => Math.random() - 0.5);
-            this.matrice[2]=this.matrice[2].sort(() => Math.random() - 0.5);
-            this.matrice[3]=this.matrice[3].sort(() => Math.random() - 0.5);
-            this.matrice=this.matrice.sort(() => Math.random() - 0.5);
+            this.vettore=this.vettore.sort(() => Math.random() - 0.5);
             this.xPrec= -1;
             this.yPrec=-1;
             this.coppie=0;
@@ -63,10 +65,13 @@ var app = new Vue ({
             for(var i=0;i<v.length;i++){
                 v[i].src="../images/carta.png"
                 v[i].style.display="block";
+                v[i].scoperta=false;
             }
+            document.getElementById("message-container").innerHTML="";
         },
 
         msg: function(){
+            
             $("#message-container").append("<div class=\"titolo msg center\">\
             <h4 style=\"color:rgb(0, 163, 0)\">\
             <p><b>Hai vinto in "+this.mosse/2+" mosse</b></p>\

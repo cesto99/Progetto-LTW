@@ -44,6 +44,8 @@
     
 }
 
+
+
 .login-box {
     text-align: center;
 
@@ -924,6 +926,9 @@ footer.copyright a{
     footer .box:nth-child(3) > div{
         display:block;
     }
+    .grandezza_logo{
+        width:100%
+    }
 }
 
 @media( max-width:576px){
@@ -948,6 +953,8 @@ footer.copyright a{
         flex-direction: column;
         padding:0.50rem;
     }
+
+   
    
 }
 

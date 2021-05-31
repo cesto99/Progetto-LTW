@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="../css/animation.css">
     </head>
     
-    <body onload="caricaPagine(); mettiUtente(); msg(); ErrorMsg(); caricaDati()">
+    <body onload="caricaPagine(); mettiUtente(); msg(); ErrorMsg(); caricaDati(); limiteData()">
         <div class="main-wrapper">
             
             <div class="site-content-wrapper">
@@ -47,7 +47,7 @@
 
                                     <br>
                                     Data di nascita: <br>
-                                        <input type="date" name="nascita" name="nascita" required> <br>
+                                        <input type="date" name="nascita" required> <br>
                                     <br>
 
                                     Matricola: <br>
@@ -84,5 +84,19 @@
         <script type="text/javascript" src="../js/memoria.js"></script>
         <script type="text/javascript" src="../js/prodotti.js"></script>
         <script type="text/javascript" src="../js/verifica.js"></script>
+        <script type="text/javascript">
+            function limiteData(){
+                var day=new Date().getDay();
+                var month=new Date().getMonth() +1;
+                var year=new Date().getFullYear() -18;
+                if (day < 10) {
+                    day = '0' + day
+                }
+                if (month < 10) {
+                    month = '0' + month
+                }
+                document.getElementsByName("nascita")[0].max=year+"-"+month+"-"+day;
+            }
+        </script>
     </body>
 </html>

@@ -13,7 +13,6 @@
             }
             
             else {
-                // bisogna cambiare il tipo di mese su pg admin, da integer a string, perchè la funzione date restituisce una stringa
                 $username = $_POST ['user'];
                 $numero = $_POST ['numero'];
                 $data = $_POST ['scadenza'];

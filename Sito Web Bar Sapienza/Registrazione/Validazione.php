@@ -21,7 +21,7 @@
                     echo "<script> verifica_utente2(); </script>";
                 }
                 else{
-                    $password = $_POST['password']; // con md5 non funzionava
+                    $password = $_POST['password'];
                     $q2 = "select * from utenti where username = $1 and pass = $2";
                     $result = pg_query_params($dbconn, $q2, array ($username, $password));
                     if (!($line = pg_fetch_array($result, null, PGSQL_ASSOC))){

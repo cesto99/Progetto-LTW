@@ -1,10 +1,8 @@
 // ------ Funzioni JS per aggiunta/eliminazione metodi di pagamento ------ //
-
 function carta_gia_inserita(){
     localStorage.verifica = "CartaGiaAggiunta";
     location.href = "../Utente/Aggiungi_Carta.html";
 }
-
 
 function aggiungi_carta() {
     localStorage.messaggio = "CartaAggiunta";
@@ -40,7 +38,6 @@ function confronta_password() {
     location.href = "../Registrazione/signup.html";
 
 }
-
 
 function ErrorMsg() {
 
@@ -89,7 +86,6 @@ function ErrorMsg() {
 }
 
 
-
 // ------ Funzioni per messaggi generici su schermo ------ //
 function aggiorna_dati() {
     localStorage.messaggio = "DatiAggiornati"; // la variabile messaggio serve per printare messaggi su schermo
@@ -97,9 +93,6 @@ function aggiorna_dati() {
 
 }
 
-// Devo usare un'altra funzione con una variabile local storage diversa
-// perche altrimenti altre funzioni pulirebbero "verifica" anche quando non devono
-// quindi introduco la variabile lS "messaggio".
 function msg() {
 
     switch(localStorage.messaggio) {

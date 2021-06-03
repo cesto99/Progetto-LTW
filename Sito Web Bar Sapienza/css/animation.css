@@ -1,6 +1,5 @@
 
 /* CSS per animazione di fade-in (dissolvenza in entrata) */
-
 .fade-in {
   animation: fadeIn ease 1s;
   -webkit-animation: fadeIn ease 1s;
@@ -16,6 +15,7 @@
     opacity:1;
   }
 }
+
 /* Per altri browser */
 @-moz-keyframes fadeIn {
   0% {

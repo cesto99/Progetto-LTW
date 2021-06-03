@@ -13,7 +13,7 @@
             }
             
             else {
-                //c'è da cambiare il tipo di mese su pg admin, da integer a string perchè la funzione date restituisce una stringa
+                // bisogna cambiare il tipo di mese su pg admin, da integer a string, perchè la funzione date restituisce una stringa
                 $username = $_POST ['user'];
                 $numero = $_POST ['numero'];
                 $data = $_POST ['scadenza'];
@@ -28,7 +28,7 @@
                     $q3 = "INSERT INTO carte VALUES($1, $2, $3, $4, $5, $6)";
                     $data = pg_query_params( $dbconn, $q3, array ($username, $numero, $mese, $anno, $cvv, $titolare));
                     if ($data) {
-                        // chiamo la funzio JS per il messaggio su schermo e per caricare i dati della carta
+                        // chiamo la funzione JS per il messaggio su schermo e per caricare i dati della carta
                         echo "<script> aggiungi_carta(); caricaCarte('$username','$numero','$mese','$anno','$cvv','$titolare'); location.href='Metodo_di_pagamento.html'</script>";
                     }else{
                         echo "<script> carta_gia_inserita(); </script>";
